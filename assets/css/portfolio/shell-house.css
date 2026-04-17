@@ -1,0 +1,477 @@
+body {
+  background: #F0EDE6;
+  color: #ffffff;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----- SECTION 1 ----- */
+/* .section-1 {
+    margin-top: 10px;
+    display: flex;
+    height: 100vh;
+    background-color: #E5DDCD;
+    
+} */
+
+
+
+
+
+.section-1 {
+  margin-top: 10px;
+  display: flex;
+  height: 100vh;
+  background-color: #E5DDCD;
+  padding: 80px 4%;
+  /* Content padding */
+  width: 100vw;
+  /* Full viewport width */
+  margin-left: calc(50% - 50vw);
+  /* Shift left edge */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  align-items: center;
+  /* Vertically center content */
+  gap: 60px;
+  /* Space between text/image */
+}
+
+/* Content stays container-constrained */
+.section-1 .text-content,
+.section-1 .hero-image {
+  flex: 1;
+  max-width: 50%;
+  /* Each takes half width */
+}
+
+/* Fix hero image sizing */
+.hero-image img {
+  width: 100%;
+  /* Full column width */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-1 {
+    flex-direction: column;
+    height: auto;
+    padding: 60px 4%;
+    gap: 40px;
+  }
+
+  .section-1 .text-content,
+  .section-1 .hero-image {
+    max-width: 100%;
+  }
+}
+
+.text-content {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-image {
+  flex: 0 0 50%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-family: Kanit;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 27px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #975420;
+  margin-bottom: 10px;
+
+}
+
+h2 {
+
+  color: #795137;
+  font-family: Kanit;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+
+
+}
+
+.meta p {
+  color: #3E3D3E;
+  font-family: Kanit;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: justify;
+  color: #3E3D3E;
+
+
+
+}
+
+/* ----- SECTION 2 ----- */
+.map-wrapper {
+  position: relative;
+  width: 1000px;
+  /* container size increase */
+  height: 700px;
+  margin: auto;
+}
+
+.map-wrapper img {
+  margin-top: 50px;
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+}
+
+/* left image */
+.img1 {
+  left: 0;
+  top: 0;
+  width: 405px;
+}
+
+/* middle image */
+.img2 {
+  left: 212px;
+  top: 0;
+  width: 385px;
+}
+
+/* right image */
+.img3 {
+  left: 596px;
+  top: 0;
+  width: 348px;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.detail-actions .btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 13px;
+  flex-shrink: 0;
+  color: #3E3D3E;
+}
+
+/* =========================================
+   NEW RESPONSIVE REFACTORED SECTIONS 
+   ========================================= */
+
+/* Hero Image Updates */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.hero-image img {
+  width: 20%;
+  min-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .section-1 {
+    height: auto;
+    padding-top: 80px;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Split Diagrams Section */
+.split-diagrams {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.diagram-left {
+  flex: 0 0 calc(50% - 5px); 
+  width: calc(50% - 5px);
+  height: auto; 
+  object-fit: cover; 
+}
+
+.diagram-right {
+  flex: 0 0 calc(50% - 5px);
+  width: calc(50% - 5px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.top-image-new {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: space-between;
+  width: 100%;
+}
+.top-image-new p{
+  font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 7px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+.left-content-new {
+  flex: 0 0 calc(19%) ;
+  width: calc(19%);
+  color: #3E3D3E; 
+  font-family: inherit;
+  position: relative;
+    z-index: 2;
+    margin-bottom: 10%;
+}
+
+.right-content-new {
+  flex: 0 0 calc(15%);
+  width: calc(15%);
+  color: #3E3D3E; 
+  font-family: inherit;
+  padding-top: 25%;
+  position: relative;
+    z-index: 2;
+}
+
+.diagram-image-top {
+  flex: 0 0 calc(80%);
+  width: calc(80%); 
+  margin-left: -10%;
+  margin-right: -5%;
+  position: relative;
+  z-index: 1; /* Ensures image sits on top of the text */
+  align-self: center;
+  height: auto; 
+  object-fit: contain;
+}
+
+.diagram-image-bottom {
+  width: 110%;
+  margin-left: -10%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .split-diagrams {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .section-1{
+    padding-top: 130px;
+  }
+
+  .diagram-left,
+  .diagram-right,
+  .diagram-image-top,
+  .diagram-image-bottom {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .top-image-new {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .left-content-new {
+    display: none; /* Hide left content on mobile */
+  }
+
+  .diagram-image-top {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .right-content-new {
+    flex: 0 0 auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .diagram-image-bottom {
+  width: 100%;
+  margin-left: 0;
+}
+}
+
+/* Technical Drawings Section */
+.technical-drawing {
+  margin: 50px auto;
+}
+
+.technical-drawing img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .technical-drawing {
+    margin: 20px 0;
+  }
+}
+
+/* Image Grid Section */
+.grid-container {
+  display: flex;
+  gap: 20px;
+  width: 100vw;
+  margin: 50px 0;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  padding: 4%;
+  box-sizing: border-box;
+  background-color: #1E1E1E;
+}
+
+.grid-left {
+  flex: 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* IMPORTANT FIX */
+.grid-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;   /* prevent image cut */
+}
+
+/* RIGHT COLUMN */
+.grid-right .grid-img{
+  width:100%;
+  height:auto;
+}
+
+
+/* Technical Drawings - Full Width */
+.technical-drawing {
+  width: 100vw;
+  margin: 50px 0;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  padding: 0 4%;
+  box-sizing: border-box;
+}
+
+.technical-drawing img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width:1024px){
+
+  .grid-container{
+    flex-direction: column;
+  }
+
+  .grid-left{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:600px){
+
+  .grid-left{
+    grid-template-columns: 1fr;
+  }
+
+}

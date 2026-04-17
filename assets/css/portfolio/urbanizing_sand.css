@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3C3C3C;
+    color: #ffffff;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----- SECTION 1 ----- */
+.section-1 {
+    padding-top: 100px;
+    display: flex;
+    /* height: 100vh; */
+}
+
+.text-content {
+    flex: 0 0 50%;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-image {
+    flex: 0 0 50%;
+}
+
+h1 {
+    font-family: Kanit;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #975420;
+    margin-bottom: 10px;
+    font-size: 18px;
+  color: #975321;
+  font-weight: 600;
+}
+
+h2 {
+    color: #9C531D;
+    font-family: Kanit;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+
+}
+.text-content h2 {
+    padding: 3px 0px;
+    font-size: 16px;
+    color: #975321;
+    font-weight: 400;
+}
+
+.meta p {
+    color: #ffffff;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+}
+.meta-strong {
+    font-family: Kanit;
+    font-weight: 400;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.description p {
+    color: #ffffff;
+    font-size: 12px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 9px;
+  padding-right: 25%;
+  font-weight: 400;
+
+}
+
+/* ----- SECTION 2 ----- */
+.section-2 {
+    display: flex;
+    width: 100%;
+    padding: 2vw 0;
+    gap: 1vw;
+    height: auto;
+}
+
+.s2-left, .s2-right {
+    flex: 0 0 calc(50% - 0.5vw); /* 50% minus half the gap */
+    max-width: calc(50% - 0.5vw);
+}
+
+.s2-left, .s2-right-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.s2-right-item {
+    width: 100%;
+}
+
+.s2-left img, .s2-right-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none;
+}
+
+.s2-left img.slideshow-active, .s2-right-item img.slideshow-active {
+    display: block;
+}
+
+.s2-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1vw;
+}
+
+.s2-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ----- SECTION 3 ----- */
+
+.Section-3 {
+    /* margin: 20px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    height: auto;
+}
+
+.Section-3 .text  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.text h3{
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #EFEFEF;
+}
+
+.Section-3 .text p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 8px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #ffffff;
+}
+
+.Section-3 .text h3 {
+    font-family: Kanit;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: 500;
+    color: #EFEFEF;
+}
+
+footer.site-footer .container {
+    color: #baadad;
+}
+
+.detail-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.detail-actions .btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.bottom-image {
+    margin-top: 200px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.bottom-image img {
+    height: auto !important;
+}
+
+.bottom-image img:first-child {
+    width: calc(35% - 7px);
+}
+
+.bottom-image img:last-child {
+    width: calc(65% - 7px);
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (max-width: 1024px) {
+    .section-1 {
+        height: auto;
+        padding-top: 130px;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+
+    .Section-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-image {
+        margin-top: 100px;
+    }
+    .description p{
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 800px) {
+    .section-2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .s2-left, .s2-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .Section-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .Section-3 .text {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+    .bottom-image {
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    .bottom-image img:first-child,
+    .bottom-image img:last-child {
+        width: 100%;
+    }
+    .description p{
+        padding-right: 0%;
+    }
+    .Section-3 > div:nth-child(1) { order: 1; } /* .text */
+    .Section-3 > div:nth-child(4) { order: 2; } /* Image 3_1 */
+    .Section-3 > div:nth-child(2) { order: 3; } /* Image 3_2 */
+    .Section-3 > div:nth-child(5) { order: 4; } /* 3_3/10 */
+    .Section-3 > div:nth-child(3) { order: 5; } /* 3_5 */
+    .Section-3 > div:nth-child(6) { order: 6; } /* 3_6 */
+}
+
+@media (max-width: 520px) {
+    .s2-right {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+    }
+
+    .detail-actions {
+        gap: 20px;
+    }
+    .text{
+        padding: 20px 0px;
+        gap: 0px;
+    }
+    .description p{
+        padding-right: 0%;
+    }
+    .Section-3 .text p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #ffffff;
+}
+.Section-3 .text h3 {
+    font-family: Kanit;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #f0f0f0;
+}
+.description p {
+    color: #ffffff;
+    font-size: 12px;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+}

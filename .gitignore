@@ -1,0 +1,19 @@
+# Gemini/Antigravity logs and artifacts
+.gemini/
+antigravity/
+brain/
+implementation_plan.md
+task.md
+walkthrough.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build/Dev files
+node_modules/
+dist/
+build/
