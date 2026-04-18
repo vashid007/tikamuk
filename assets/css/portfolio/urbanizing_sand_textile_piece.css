@@ -119,7 +119,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1vw;
+    gap: 10px 30px;
 }
 
 .s2-right img {

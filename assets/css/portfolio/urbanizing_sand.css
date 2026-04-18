@@ -74,17 +74,18 @@ h2 {
 }
 
 .meta p {
-    color: #ffffff;
+    color: #f0f0f0;
     line-height: 100%;
     letter-spacing: 0%;
     margin-bottom: 10px;
     font-size: 12px;
-    font-weight: 300;
-    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-family: kanit;
 }
 .meta-strong {
     font-family: Kanit;
-    font-weight: 400;
+    font-weight: 400;   
+    color: #EFEFEF;
 }
 .description {
     display: flex;
@@ -109,13 +110,13 @@ h2 {
     display: flex;
     width: 100%;
     padding: 2vw 0;
-    gap: 1vw;
+    gap: 30px;
     height: auto;
 }
 
 .s2-left, .s2-right {
-    flex: 0 0 calc(50% - 0.5vw); /* 50% minus half the gap */
-    max-width: calc(50% - 0.5vw);
+    flex: 0 0 calc(50% - 15px); /* 50% minus half the gap */
+    max-width: calc(50% - 15px);
 }
 
 .s2-left, .s2-right-item {
@@ -142,7 +143,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 1vw;
+    gap: 0.5px 30px;
 }
 
 .s2-right img {
@@ -158,7 +159,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 15px;
+    gap: 10px 30px;
     height: auto;
 }
 
