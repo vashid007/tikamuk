@@ -172,7 +172,13 @@ h2 {
     font-weight: 400;
     color: #EFEFEF;
 }
-
+.single-items img{
+    width: 100%;
+    object-fit: cover;
+}
+.double-image {
+    display: grid;grid-template-columns:auto;gap: 10px;
+}
 .Section-3 .text p {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
@@ -293,7 +299,7 @@ footer.site-footer .container {
         gap: 13px;
     }
 
-    .single-items {
+    .single-items, .double-image {
         display: flex;
         flex-direction: column;
         gap: 13px;
