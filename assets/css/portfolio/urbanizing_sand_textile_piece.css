@@ -20,22 +20,22 @@ img {
 .section-1 {
     margin-top: 100px;
     display: flex;
-    height: 85vh;
+    height: auto;
 }
 .text-content {
-    flex: 0 0 50%;
-    padding-right: 10vw;
+    flex: 0 0 60%;
+    padding-right: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .hero-image {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
 }
 .hero-image img {
-    width: auto;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-
 }
 
 h1 {
@@ -47,14 +47,13 @@ h1 {
     letter-spacing: 0%;
     color: #666666;
     margin-bottom: 10px;
-
 }
+
 .meta-strong {
     font-weight: 500;
 }
 
 h2 {
-
     color: #9C531D;
     font-family: Kanit;
     font-weight: 300;
@@ -62,19 +61,24 @@ h2 {
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
 
+.text-content h2 {
+    padding: 3px 0px;
+    font-size: 16px;
+    color: #9C531D;
+    font-weight: 400;
 }
 
 .meta p {
     color: #3E3D3E;
-    font-family: Kanit;
-    font-weight: 400;
-    font-style: Medium;
-    font-size: 13px;
     line-height: 100%;
     letter-spacing: 0%;
     margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: kanit;
 }
 
 .description {
@@ -85,13 +89,12 @@ h2 {
 }
 
 .description p {
-    font-family: "Courier Prime", monospace;
-    font-weight: 400;
-    font-style: Regular;
     font-size: 12px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #3E3D3E;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 9px;
+  font-weight: 400;
+    color: #000000;
 }
 
 /* ----- SECTION 2 ----- */

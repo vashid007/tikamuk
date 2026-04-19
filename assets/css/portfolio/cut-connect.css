@@ -25,7 +25,7 @@ img {
 
 .text-content {
     flex: 0 0 50%;
-    padding-right: 10vw;
+    padding-right: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -25,8 +25,8 @@ img {
 }
 
 .text-content {
-    flex: 0 0 50%;
-    padding-right: 5vw;
+    flex: 0 0 60%;
+    padding-right: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +39,7 @@ img {
 }
 
 .hero-image {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
 }
 
 h1 {
@@ -100,9 +100,7 @@ h2 {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   padding-top: 9px;
-  padding-right: 25%;
   font-weight: 400;
-
 }
 
 /* ----- SECTION 2 ----- */
@@ -219,7 +217,7 @@ footer.site-footer .container {
 }
 
 .text-fabrication{
-    margin: -24px 0 0 0;
+    margin: -2px 0 0 0;
 }
 
 .bottom-image {
@@ -292,6 +290,12 @@ footer.site-footer .container {
 
     .Section-3 {
         grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .single-items {
+        display: flex;
+        flex-direction: column;
         gap: 13px;
     }
 
