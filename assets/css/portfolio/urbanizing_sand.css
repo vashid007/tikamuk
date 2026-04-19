@@ -142,13 +142,13 @@ h2 {
 .s2-right {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.5px 30px;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 30px;
 }
 
 .s2-right img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -218,10 +218,14 @@ footer.site-footer .container {
     flex-shrink: 0;
 }
 
+.text-fabrication{
+    margin: -24px 0 0 0;
+}
+
 .bottom-image {
-    margin-top: 200px;
+    margin-top: 30px;
     display: flex;
-    gap: 14px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -230,11 +234,11 @@ footer.site-footer .container {
 }
 
 .bottom-image img:first-child {
-    width: calc(35% - 7px);
+    width: calc(40% - 15px);
 }
 
 .bottom-image img:last-child {
-    width: calc(65% - 7px);
+    width: calc(60% - 15px);
 }
 
 /* ----- MEDIA QUERIES ----- */
@@ -244,7 +248,7 @@ footer.site-footer .container {
         height: auto;
         padding-top: 130px;
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 13px;
     }
 
     .text-content {
@@ -264,10 +268,11 @@ footer.site-footer .container {
 
     .Section-3 {
         grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
     }
 
     .bottom-image {
-        margin-top: 100px;
+        margin-top: 13px;
     }
     .description p{
         padding-right: 5%;
@@ -277,7 +282,7 @@ footer.site-footer .container {
 @media (max-width: 800px) {
     .section-2 {
         flex-direction: column;
-        gap: 20px;
+        gap: 13px;
     }
 
     .s2-left, .s2-right {
@@ -287,16 +292,18 @@ footer.site-footer .container {
 
     .Section-3 {
         grid-template-columns: 1fr;
+        gap: 13px;
     }
 
     .Section-3 .text {
         grid-template-columns: 1fr;
-        gap: 0px;
+        gap: 13px;
     }
 
     .bottom-image {
-        margin-top: 50px;
+        margin-top: 13px;
         flex-direction: column;
+        gap: 13px;
     }
     .bottom-image img:first-child,
     .bottom-image img:last-child {
@@ -316,15 +323,15 @@ footer.site-footer .container {
 @media (max-width: 520px) {
     .s2-right {
         grid-template-columns: 1fr;
-        gap: 3vw;
+        gap: 13px;
     }
 
     .detail-actions {
-        gap: 20px;
+        gap: 13px;
     }
     .text{
         padding: 20px 0px;
-        gap: 0px;
+        gap: 13px;
     }
     .description p{
         padding-right: 0%;
@@ -350,6 +357,8 @@ footer.site-footer .container {
     font-size: 12px;
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
-
+}
+.text-fabrication{
+    margin: -14px 0 0 0;
 }
 }

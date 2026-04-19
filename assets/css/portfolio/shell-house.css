@@ -232,7 +232,7 @@ h2 {
     height: auto;
     padding-top: 80px;
     flex-direction: column-reverse;
-    gap: 30px;
+    gap: 13px;
   }
 
   .hero-image img {
@@ -333,7 +333,7 @@ h2 {
 @media (max-width: 1024px) {
   .split-diagrams {
     flex-direction: column;
-    gap: 20px;
+    gap: 13px;
   }
   .section-1{
     padding-top: 130px;
@@ -389,7 +389,7 @@ h2 {
 
 @media (max-width: 800px) {
   .technical-drawing {
-    margin: 20px 0;
+    margin: 13px 0;
   }
 }
 
@@ -460,10 +460,12 @@ h2 {
 
   .grid-container{
     flex-direction: column;
+    gap: 13px;
   }
 
   .grid-left{
     grid-template-columns: repeat(2,1fr);
+    gap: 13px;
   }
 
 }

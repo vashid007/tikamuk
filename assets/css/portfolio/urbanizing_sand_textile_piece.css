@@ -119,12 +119,12 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 10px 30px;
+    gap: 0.5px 30px;
 }
 
 .s2-right img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -133,6 +133,11 @@ h2 {
 .Section-3 {
     height: auto;
     object-fit: cover;
+}
+
+.Section-3 img {
+    height: auto;
+    object-fit: initial;
 }
 
 .div3{
@@ -299,15 +304,15 @@ h2 {
         height: auto;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 13px;
     }
 
     .parent-2 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
-        gap: 10px;
-        margin-top: 15px;
+        gap: 13px;
+        margin-top: 13px;
     }
 
     .parent-2 .div1,
@@ -323,19 +328,19 @@ h2 {
     }
 
     .bottom-image {
-        padding: 50px 0;
+        padding: 13px 0;
     }
 }
 
 @media (max-width: 800px) {
     .section-2 {
         flex-direction: column;
-        gap: 20px;
+        gap: 13px;
     }
 
     .parent-1 .div3 {
         flex-direction: column;
-        gap: 20px;
+        gap: 13px;
     }
 
     .parent-2 {
@@ -343,7 +348,7 @@ h2 {
     }
 
     .bottom-image {
-        padding: 30px 0;
+        padding: 13px 0;
     }
 }
 
@@ -357,6 +362,6 @@ h2 {
     }
 
     .detail-actions {
-        gap: 20px;
+        gap: 13px;
     }
 }

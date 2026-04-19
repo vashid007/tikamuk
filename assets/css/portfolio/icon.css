@@ -230,7 +230,7 @@ footer.site-footer .container {
         height: auto;
         padding-top: 80px;
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 13px;
     }
 
     .text-content {
@@ -262,6 +262,7 @@ footer.site-footer .container {
     /* Change grid to 1 column on mobile */
     .icon-gallery {
         grid-template-columns: 1fr;
+        gap: 13px;
     }
 
     .gallery-item {

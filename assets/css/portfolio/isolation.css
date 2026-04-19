@@ -247,7 +247,7 @@ footer.site-footer .container {
         height: auto;
         padding-top: 80px;
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 13px;
         overflow: visible;
     }
 
@@ -271,6 +271,7 @@ footer.site-footer .container {
     .three-col-layout {
         flex-direction: column;
         grid-template-columns: 1fr;
+        gap: 13px;
     }
 
     .technical-drawing {
@@ -303,11 +304,12 @@ footer.site-footer .container {
     }
 
     .technical-drawing {
-        margin: 20px 0;
+        margin: 13px 0;
     }
 }
 @media (max-width:768px){
   .image-grid{
     grid-template-columns: 1fr;
+    gap: 13px;
   }
 }

@@ -186,7 +186,7 @@
 @media (max-width: 900px) {
     main {
         padding: 1.5rem 1rem;
-        gap: 6rem;
+        gap: 13px;
     }
 
     .work-showcase-header {
@@ -194,7 +194,7 @@
     }
 
     .about-allportfolio {
-        gap: 4rem;
+        gap: 13px;
     }
 
     .about-portfolio-type1,
@@ -219,13 +219,13 @@
         padding: 0.8rem;
     }
     .work-showcase {
-        gap: 4rem;
+        gap: 13px;
     }
     .work-showcase-header {
         padding-bottom: 3rem;
     }
    .about-allportfolio{
-        gap: 3rem;
+        gap: 13px;
     }
     .selected-works {
         font-size: 1.8rem;
