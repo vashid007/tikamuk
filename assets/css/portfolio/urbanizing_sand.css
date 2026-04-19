@@ -371,4 +371,13 @@ footer.site-footer .container {
 .text-fabrication{
     margin: -14px 0 0 0;
 }
+.text-content h1 {
+    font-size: 22px;
+    padding-top: 17px;
+}
+.text-content h2 {
+    font-size: 18px;
+    line-height: 1.2em;
+    margin-top: -7px;
+}
 }
