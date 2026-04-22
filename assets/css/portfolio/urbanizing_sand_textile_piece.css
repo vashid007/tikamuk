@@ -99,30 +99,39 @@ h2 {
 
 /* ----- SECTION 2 ----- */
 .section-2 {
-    /* margin: 20px; */
     display: flex;
-    padding: 2vw 0;
-    gap: 1vw;
+    width: 100%;
+    /* padding: 2vw 0; */
+    gap: 30px;
     height: auto;
-    /* Adjust depending on how tall you want it */
 }
 
-.s2-left {
-    flex: 1;
+.s2-left, .s2-right {
+    flex: 0 0 calc(50% - 15px); /* 50% minus half the gap */
+    max-width: calc(50% - 15px);
 }
 
-.s2-left img {
+.s2-left, .s2-right-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.s2-left img, .s2-right-item img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    display: none;
+}
+
+.s2-left img.slideshow-active, .s2-right-item img.slideshow-active {
+    display: block;
 }
 
 .s2-right {
-    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0.5px 30px;
+    gap: 10px 30px;
 }
 
 .s2-right img {
@@ -133,55 +142,106 @@ h2 {
 
 /* ----- SECTION 3 ----- */
 
-.Section-3 {
-    height: auto;
-    object-fit: cover;
-}
-
-.Section-3 img {
-    height: auto;
-    object-fit: initial;
-}
-
-.div3{
-    padding-bottom: 10px;
-}
-
-.parent-1 {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 1px;
-    height: 80vh;
-
-}
-
-.parent-1 .div1 {
-    grid-area: 1 / 1 / 4 / 5;
-}
-
-.parent-1 .div2 {
-    grid-area: 4 / 1 / 7 / 5;
-}
-
-.parent-1 .div3 {
-    grid-area: 1 / 5 / 2 / 13;
-
+.new-section-3 {
     display: flex;
+    width: 100%;
+    gap: 5px;
+    height: auto;
+    align-items: stretch;
+    padding: 30px 0;
 }
 
-.parent-1 .div4 {
-    grid-area: 2 / 5 / 7 / 9;
+/* Base column shared styles */
+.p3-col-1, .p3-col-2, .p3-col-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.parent-1 .div5 {
-    grid-area: 2 / 9 / 7 / 13;
+/* Widths */
+.p3-col-1 { flex: 0 0 calc(25% - 5px); max-width: 25%; }
+.p3-col-2 { flex: 0 0 calc(65% - 5px); max-width: 65%; }
+.p3-col-3 { flex: 0 0 calc(10% - 5px); max-width: 10%; }
+
+/* Image boxes */
+.p3-img-box {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.parent-1 div img {
-
+.p3-img-box img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+/* Height Calibration: 2:1 ratio for top vs bottom parts */
+/* Top parts: height matches Row 1 + Row 2 of Col 2 */
+.p3-col-1 .p3-img-box:nth-child(1),
+.p3-col-1 .p3-img-box:nth-child(2),
+.p3-col-2 .p3-row-1,
+.p3-col-2 .p3-row-2,
+.p3-col-3 .side-text {
+    flex: 1; /* These elements share the "top part" space */
+}
+
+/* Specific stacking for Col 1 (3 images: 1+1 top, 1 bottom) */
+.p3-col-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column 2 internal rows */
+.p3-row-2, .p3-row-3 {
+    display: flex;
+    gap: 5px;
+}
+
+.p3-row-2 .p3-img-box { flex: 1; }
+.p3-row-3 .p3-img-box { flex: 1; }
+
+/* Calibration logic */
+.p3-col-1 .p3-img-box:nth-child(1),
+.p3-col-1 .p3-img-box:nth-child(2) {
+    height: 25vh; /* Fixed height for top images to allow for calibration */
+}
+
+.p3-col-1 .p3-img-box:nth-child(3) {
+    height: 25vh;
+}
+
+.p3-col-2 .p3-row-1, 
+.p3-col-2 .p3-row-2 {
+    height: 25vh;
+}
+
+.p3-col-2 .p3-row-3 {
+    height: 25vh;
+}
+
+.p3-col-3 .side-text {
+    height: 50vh; /* Sum of top two rows (25+25) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Column 3 side text style */
+.side-text span {
+    font-weight: 600;
+    font-size: 10px;
+    color: #9C531D;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.side-text p {
+    font-size: 9px;
+    line-height: 1.4;
+    color: #3E3D3E;
+    font-family: "Courier Prime", monospace;
 }
 
 .div3-1 p {
@@ -227,25 +287,7 @@ h2 {
     grid-row-gap: 0px;
 }
 
-.parent-2 .div1 {
-    grid-area: 1 / 1 / 3 / 3;
-}
-
-.parent-2 .div2 {
-    grid-area: 1 / 3 / 3 / 5;
-}
-
-.parent-2 .div3 {
-    grid-area: 1 / 5 / 3 / 6;
-}
-
-.parent-2 .div4 {
-    grid-area: 1 / 6 / 3 / 7;
-}
-
-.parent-2 .div5 {
-    grid-area: 1 / 7 / 3 / 8;
-}
+/* Removed old parent-2 grid areas */
 
 
 
@@ -333,16 +375,67 @@ h2 {
     .bottom-image {
         padding: 13px 0;
     }
+
+    /* (Section 3 stacking moved to 800px for better consistency) */
 }
 
+
 @media (max-width: 800px) {
+    .new-section-3 {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .p3-col-1, .p3-col-2, .p3-col-3 {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .p3-col-1 .p3-img-box,
+    .p3-col-2 .p3-row-1,
+    .p3-col-2 .p3-row-2,
+    .p3-col-2 .p3-row-3,
+    .p3-col-3 .side-text {
+        height: auto !important;
+    }
+
+    .p3-row-2, .p3-row-3 {
+        flex-direction: column;
+    }
+
+    .side-text {
+        padding: 20px 0;
+    }
+
     .section-2 {
         flex-direction: column;
-        gap: 13px;
+        gap: 5px;
+    }
+
+    .s2-left, .s2-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .Section-3,
+    .parent-1,
+    .p1-col-2,
+    .p1-row-2 {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .s3-main,
+    .s3-side,
+    .p1-col-1,
+    .p1-col-2,
+    .p1-row-2 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100%;
     }
 
     .parent-1 .div3 {
-        flex-direction: column;
         gap: 13px;
     }
 
