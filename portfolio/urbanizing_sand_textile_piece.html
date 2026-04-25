@@ -225,7 +225,7 @@
           </div>
         </div>
 
-        <!-- Column 2: 65% -->
+        <!-- Column 2: 75% -->
         <div class="p3-col-2">
           <!-- Row 1: Text -->
           <div class="p3-row-1">
@@ -252,39 +252,99 @@
               </p>
             </div>
           </div>
-          <!-- Row 2: 2 images -->
+          <!-- Row 2: 3 columns -->
           <div class="p3-row-2">
-            <div class="p3-img-box">
+            <!-- Col 2.1: Image (43% width) -->
+            <div class="p3-img-box p3-row2-col1">
               <img
                 src="../assets/images/portfolio/project2/pr2/3 (Image_1).webp"
                 alt=""
               />
             </div>
-            <div class="p3-img-box">
+            <!-- Col 2.2: Image (43% width) -->
+            <div class="p3-img-box p3-row2-col2">
               <img
                 src="../assets/images/portfolio/project2/pr2/3 (Image_2).webp"
                 alt=""
               />
             </div>
+            <!-- Col 2.3: Text (14% width) -->
+            <div class="p3-row2-col3">
+              <div class="side-text">
+                <h6>[ FABRICATION ]</h6>
+                <p>
+                  In constructing the design elements, references to materials
+                  of cultural significance to native land and coastal
+                  communities were incorporated to acknowledge their role in
+                  shaping Dubai’s enduring port identity. This includes the use
+                  of mother-of-pearl tiles in the mosaic wall to reference
+                  historic pearl-diving sites. Meanwhile, the textile piece
+                  adopts a more literal approach to representing current site
+                  conditions. The textile was created by hand-dyeing muslin to
+                  evoke natural elements such as sand and vegetation. Man-made
+                  water bodies are represented with hand-beaded embroidery,
+                  while road networks connecting major communities are depicted
+                  through hand embroidery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="new-section-4">
+        <!-- Column 1: 25% -->
+        <div class="p4-col-1">
+          <div class="p4-img-box">
+            <img
+              src="../assets/images/portfolio/project2/pr2/3 (Scan_3).webp"
+              alt=""
+            />
           </div>
         </div>
 
-        <!-- Column 3: 10% -->
-        <div class="p3-col-3">
+        <!-- Column 2: 4 images -->
+        <div class="p4-col-2">
+          <div class="p4-img-box">
+            <img
+              src="../assets/images/portfolio/project2/pr2/3 (Scan_4).webp"
+              alt=""
+            />
+          </div>
+          <div class="p4-img-box">
+            <img
+              src="../assets/images/portfolio/project2/pr2/3 (Image_3).webp"
+              alt=""
+            />
+          </div>
+          <div class="p4-img-box">
+            <img
+              src="../assets/images/portfolio/project2/pr2/3 (Image_4).webp"
+              alt=""
+            />
+          </div>
+          <div class="p4-img-box">
+            <img
+              src="../assets/images/portfolio/project2/pr2/3 (Image_5).webp"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- Column 3: Text -->
+        <div class="p4-col-3">
           <div class="side-text">
-            <h6>[ FABRICATION ]</h6>
             <p>
-              In constructing the design elements, references to materials of
-              cultural significance to native land and coastal communities were
-              incorporated to acknowledge their role in shaping Dubai’s enduring
-              port identity. This includes the use of mother-of-pearl tiles in
-              the mosaic wall to reference historic pearl-diving sites.
-              Meanwhile, the textile piece adopts a more literal approach to
-              representing current site conditions. The textile was created by
-              hand-dyeing muslin to evoke natural elements such as sand and
-              vegetation. Man-made water bodies are represented with hand-beaded
-              embroidery, while road networks connecting major communities are
-              depicted through hand embroidery.
+              Although the shift from past to present conditions is remarkable,
+              these advancements would not have been possible without human
+              intervention— particularly the contributions of millions of
+              immigrant workers who played a central role in development. Dubai
+              has a long history of immigrant labor, and these workers are as
+              integral to the city’s socio-economic success as its native
+              population. The textile piece is conceived as a wearable work of
+              art representing both native and immigrant workers whose efforts
+              shaped Dubai’s development.
             </p>
           </div>
         </div>
@@ -407,6 +467,48 @@
             }, index * 100); // 100ms delay between each box start
           }
         });
+
+        // --- Section 3 & 4 Height Sync ---
+        function syncSectionHeights() {
+          // Sync Section 3
+          const section3 = document.querySelector(".new-section-3");
+          if (section3 && window.innerWidth > 800) {
+            const col1 = section3.querySelector(".p3-col-1");
+            const row1 = section3.querySelector(".p3-row-1");
+            const row2 = section3.querySelector(".p3-row-2");
+            if (col1 && row1 && row2) {
+              const targetHeight = col1.offsetHeight - row1.offsetHeight - 5;
+              if (targetHeight > 0) row2.style.height = targetHeight + "px";
+            }
+          } else {
+            const row2 = document.querySelector(".p3-row-2");
+            if (row2) row2.style.height = "auto";
+          }
+
+          // Sync Section 4
+          const section4 = document.querySelector(".new-section-4");
+          if (section4 && window.innerWidth > 800) {
+            const col1 = section4.querySelector(".p4-col-1");
+            const col2 = section4.querySelector(".p4-col-2");
+            const col3 = section4.querySelector(".p4-col-3");
+            if (col1 && col2 && col3) {
+              const targetHeight = col1.offsetHeight;
+              col2.style.height = targetHeight + "px";
+              col3.style.height = targetHeight + "px";
+            }
+          } else {
+            const col2 = document.querySelector(".p4-col-2");
+            const col3 = document.querySelector(".p4-col-3");
+            if (col2) col2.style.height = "auto";
+            if (col3) col3.style.height = "auto";
+          }
+        }
+
+        // Run on load, resize, and after a small delay to ensure images are ready
+        window.addEventListener("load", syncSectionHeights);
+        window.addEventListener("resize", syncSectionHeights);
+        setTimeout(syncSectionHeights, 500);
+        syncSectionHeights();
       });
     </script>
   </body>
