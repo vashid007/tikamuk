@@ -232,20 +232,16 @@
             <div class="div3-1">
               <h6>Conceptual Development</h6>
               <p>
-                <br />The conceptual development of this project began with the
-                goal of showcasing the advancements in urban development on
+                The conceptual development of this project began with the goal
+                of showcasing the advancements in urban development on
                 previously barren land, where such interventions were once
                 considered impossible. The aim was to create design elements
                 that not only highlight the contrast between past and present
                 conditions but also visually convey the transformation over time
-                through a 2D medium. This led to exploring<br />
-                <br />
-
-                architectural drawing practices, particularly the use of tracing
-                paper to plan and implement changes. Accordingly, a transparent
-                piece was created, analogous to tracing paper over a site plan,
-                to reveal this <br /><br />
-
+                through a 2D medium. This led to exploring architectural drawing
+                practices, particularly the use of tracing paper to plan and
+                implement changes. Accordingly, a transparent piece was created,
+                analogous to tracing paper over a site plan, to reveal the
                 infrastructural elements essential to urban growth. The textile
                 component is intended to function as a trace or veil and can be
                 removed and overlaid onto the permanent site context.
@@ -352,7 +348,7 @@
 
       <div class="bottom-image">
         <img
-          src="../assets/images/portfolio/project2/pr2/7 TIKA (Prof_Proj_2) 1.png"
+          src="../assets/images/portfolio/project2/pr2/4 TIKA - (Prof_Proj_2).svg"
           alt=""
         />
       </div>
@@ -366,7 +362,7 @@
         </div>
       </div>
 
-      <div class="extra-gallery" style="display: none">
+      <!-- <div class="extra-gallery" style="display: none">
         <img
           src="../assets/images/portfolio/project2/Additional image/8 (Image_Zoom_1).webp"
           class="gallery-image"
@@ -419,7 +415,7 @@
           src="../assets/images/portfolio/project2/Additional image/8 (Image_13).webp"
           class="gallery-image"
         />
-      </div>
+      </div> -->
     </main>
 
     <footer class="site-footer">
@@ -477,8 +473,22 @@
             const row1 = section3.querySelector(".p3-row-1");
             const row2 = section3.querySelector(".p3-row-2");
             if (col1 && row1 && row2) {
+              // Apply margin top and bottom -5px to cut the image as requested
+              const scan2Box = col1.querySelectorAll(".p3-img-box")[1];
+              if (scan2Box) {
+                scan2Box.style.marginTop = "-5px";
+                scan2Box.style.marginBottom = "-3px";
+              }
+
+              // Temporarily remove stretch to get col1's true natural height
+              section3.style.alignItems = "flex-start";
+              row2.style.height = "auto";
+
               const targetHeight = col1.offsetHeight - row1.offsetHeight - 5;
               if (targetHeight > 0) row2.style.height = targetHeight + "px";
+
+              // Restore stretch
+              section3.style.alignItems = "stretch";
             }
           } else {
             const row2 = document.querySelector(".p3-row-2");
@@ -492,9 +502,30 @@
             const col2 = section4.querySelector(".p4-col-2");
             const col3 = section4.querySelector(".p4-col-3");
             if (col1 && col2 && col3) {
+              // Crop the bottom 4px of the first image (Scan_4)
+              const firstImg = col2.querySelector(".p4-img-box img");
+              if (firstImg) {
+                firstImg.style.height = "calc(100% + 4px)";
+                firstImg.style.objectPosition = "top";
+              }
+
+              // Crop the bottom 5px of the master image (Scan_3)
+              const masterImg = col1.querySelector(".p4-img-box img");
+              if (masterImg) {
+                masterImg.style.marginBottom = "-5px";
+              }
+
+              // Temporarily remove stretch to get col1's true natural height
+              section4.style.alignItems = "flex-start";
+              col2.style.height = "auto";
+              col3.style.height = "auto";
+
               const targetHeight = col1.offsetHeight;
               col2.style.height = targetHeight + "px";
               col3.style.height = targetHeight + "px";
+
+              // Restore stretch
+              section4.style.alignItems = "stretch";
             }
           } else {
             const col2 = document.querySelector(".p4-col-2");

@@ -42,7 +42,7 @@ h1 {
     font-family: Kanit;
     font-weight: 400;
     font-style: Bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 100%;
     letter-spacing: 0%;
     color: #666666;
@@ -187,7 +187,7 @@ h2 {
 /* Col 2 Row 1: Text */
 .p3-col-2 .p3-row-1 {
     width: 100%;
-    padding-right: 13.33%; /* Aligns with 10% of total page width: (10/75)*100 */
+    padding-right: 15%; /* Aligns with 15% width of col3 */
 }
 
 /* Col 2 Row 2: 3-Column Layout */
@@ -199,11 +199,11 @@ h2 {
 }
 
 .p3-row2-col1, .p3-row2-col2 {
-    width: 43.335%; /* (100 - 13.33)/2 */
+    width: 42%;
 }
 
 .p3-row2-col3 {
-    width: 13.33%; /* 10% of total width is 13.33% of this 75% column */
+    width: 15%;
 }
 
 /* Height Synchronization: Row 2 Images should fill the container */
@@ -222,7 +222,7 @@ h2 {
 
 .div3-1 h6 {
     font-family: "Kanit", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     color: rgb(50, 50, 50);
     text-transform: uppercase;
     padding-left: 5px;
@@ -231,38 +231,40 @@ h2 {
 .side-text h6 {
     margin-top: -5px;
     font-family: "Kanit", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     color: rgb(50, 50, 50);
     text-transform: uppercase;
-    padding-left: 3px;
+    padding-left: 5px;
     padding-bottom: 8px;
 }
 
 .div3-1 p {
-    color: rgb(115, 20, 12);
+    color: rgb(0, 0, 0);
     font-family: "Courier New", Courier, monospace;
     font-weight: 400;
     font-size: 9px;
     line-height: 100%;
     letter-spacing: 0%;
     padding-left: 5px;
+    padding-top: 8px;
+    padding-bottom: 6px;
 }
 
 .side-text p {
-    color: rgb(0, 0, 0);
+    color: #73140C;
     font-family: "Courier New", Courier, monospace;
     font-weight: 400;
     font-size: 9px;
     line-height: 110%;
     letter-spacing: 0%;
-    padding-left: 3px;
+    padding-left: 5px;
 }
 
 
 /* ----- SECTION 4 ----- */
 .new-section-4 {
     display: grid;
-    grid-template-columns: 25% 1fr 10%; /* Column 1 (25%), Column 2 (Balance), Column 3 (10%) */
+    grid-template-columns: 25% 1fr 11.25%; /* Matches the 15% width of the 75% Col 2 in Section 3 */
     width: 100%;
     gap: 5px;
     padding: 5px 0 30px 0;
@@ -276,6 +278,8 @@ h2 {
 .p4-col-2 {
     display: grid;
     grid-template-columns: 40fr 18fr 18fr 24fr; /* Specific ratios: 40/18/18/24 */
+    grid-template-rows: 1fr;
+    min-height: 0;
     gap: 5px;
 }
 
@@ -287,6 +291,7 @@ h2 {
     position: relative;
     overflow: hidden;
     height: 100%;
+    min-height: 0;
 }
 
 .p4-img-box img {
@@ -295,6 +300,8 @@ h2 {
     object-fit: cover;
     display: block;
 }
+
+
 
 .p4-col-1 .p4-img-box img {
     height: auto; /* Master height */
