@@ -262,6 +262,10 @@ h2 {
     padding-left: 5px;
 }
 
+.highlight-text {
+    color: #73140C !important;
+}
+
 
 /* ----- SECTION 4 ----- */
 .new-section-4 {
@@ -357,7 +361,7 @@ h2 {
         height: auto;
         padding-top: 40px;
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 13px;
     }
 
     .text-content {
@@ -421,12 +425,16 @@ h2 {
 @media (max-width: 800px) {
     .section-2 {
         flex-direction: column;
-        gap: 5px;
+        gap: 13px;
     }
     
     .s2-left, .s2-right {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    .s2-right {
+        gap: 13px;
     }
     
     .desktop-sections {
@@ -436,8 +444,14 @@ h2 {
     .mobile-sections {
         display: flex !important;
         flex-direction: column;
-        gap: 5px;
+        gap: 13px;
         padding: 20px 0;
+    }
+
+    .scan-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .mobile-item {
