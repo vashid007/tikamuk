@@ -504,12 +504,16 @@
               channel, connecting to the Chester Springs Marsh Birdhide and Silt
               Pottery Studio. The bridge allows visitors the opportunity to
               explore the restored marsh grounds while observing native flora
-              and fauna. The Flux Bridge is designed to partially flood during
-              heavy rainfall and flood events. During such events, users are
-              still able to utilize the bridge by stepping across the bridge
-              studs, which create an elevated path over the water. The bridge is
-              intended to allow visitors to experience flooding and the changing
-              riverscape.
+              and fauna.
+              <br /><br />
+              <span style="color: #73140c"
+                >The Flux Bridge is designed to partially flood during heavy
+                rainfall and flood events. During such events, users are still
+                able to utilize the bridge by stepping across the bridge studs,
+                which create an elevated path over the water. The bridge is
+                intended to allow visitors to experience flooding and the
+                changing riverscape.</span
+              >
             </p>
 
             <h6>FISH CLEANING TABLE</h6>
@@ -520,7 +524,7 @@
             </p>
 
             <img
-              src="../assets/images/portfolio/project3/section 6/15 (Icon_D_2).png"
+              src="../assets/images/portfolio/project3/section 6/6 (Icon_2).png"
             />
           </div>
 
@@ -548,13 +552,13 @@
           <div class="flux-right">
             <div class="flux-right-icons">
               <img
-                src="../assets/images/portfolio/project3/section 6/15 (Icon_1).png"
+                src="../assets/images/portfolio/project3/section 6/6 (Icon_1).png"
               />
               <img
-                src="../assets/images/portfolio/project3/section 6/15 (Icon_2).png"
+                src="../assets/images/portfolio/project3/section 6/6 (Icon_D_1).png"
               />
               <img
-                src="../assets/images/portfolio/project3/section 6/15 (Icon_2).png"
+                src="../assets/images/portfolio/project3/section 6/6 (Icon_D_2).png"
               />
             </div>
 
@@ -592,7 +596,7 @@
         </div>
         <di>
           <img
-            src="../assets/images/portfolio/project3/section 6/15 (Perspective Section_2).png"
+            src="../assets/images/portfolio/project3/section 6/6 (Perspective Section_2).webp"
             alt=""
           />
         </di>
@@ -600,35 +604,35 @@
           <!-- Row 1 -->
           <div class="models-row-5">
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_1).png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_1).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_2) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_2).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_3) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_3).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_4) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_4).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_5) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_5).webp"
             />
           </div>
 
           <!-- Row 2 -->
           <div class="models-row-4">
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_6) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_6).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_7) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_7).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_8) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_8).webp"
             />
             <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_9) 1.png"
+              src="../assets/images/portfolio/project3/section 7/7 (Image_9).webp"
             />
           </div>
 
@@ -644,18 +648,20 @@
               </p>
             </div>
 
-            <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_10) 1.png"
-              class="model-large"
-            />
-            <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_11) 1.png"
-              class="model-large"
-            />
-            <img
-              src="../assets/images/portfolio/project3/section 7/16 (Image_12) 1.png"
-              class="model-large"
-            />
+            <div class="models-bottom-images">
+              <img
+                src="../assets/images/portfolio/project3/section 7/7 (Image_10).webp"
+                class="model-large"
+              />
+              <img
+                src="../assets/images/portfolio/project3/section 7/7 (Image_11).webp"
+                class="model-large"
+              />
+              <img
+                src="../assets/images/portfolio/project3/section 7/7 (Image_12).webp"
+                class="model-large"
+              />
+            </div>
           </div>
         </div>
 
@@ -695,5 +701,34 @@
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/animations.js"></script>
+    <!-- Equal Height Script for Flux Bridge Info -->
+    <script>
+      window.addEventListener("load", function () {
+        function setEqualHeight() {
+          const columns = document.querySelectorAll(
+            ".flux-left, .flux-middle, .flux-right",
+          );
+          let maxHeight = 0;
+
+          // Reset heights to calculate natural sizes
+          columns.forEach((col) => (col.style.height = "auto"));
+
+          // Find the tallest column
+          columns.forEach((col) => {
+            if (col.offsetHeight > maxHeight) {
+              maxHeight = col.offsetHeight;
+            }
+          });
+
+          // Apply max height to all
+          columns.forEach((col) => {
+            col.style.height = maxHeight + "px";
+          });
+        }
+
+        setEqualHeight();
+        window.addEventListener("resize", setEqualHeight);
+      });
+    </script>
   </body>
 </html>

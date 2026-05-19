@@ -852,37 +852,42 @@ h2 {
     display: flex;
     gap: 10px;
     width: 100%;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .flux-left {
-    flex: 1;
+    flex: 0 0 calc(13% - 7.5px);
     text-align: end;
+    display: flex;
+    flex-direction: column;
 }
 
 .flux-left h6 {
-    color: #323232;
-    font-size: 12px;
-    margin-bottom: 5px;
+    color: #73140C;
+    font-size: 8px;
+    margin-bottom: 2px;
     font-family: Kanit, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    line-height: 0.6rem;
 }
 
 .flux-left p {
-    line-height: 130%;
+    line-height: 105%;
     color: #000000;
-    font-size: 8px;
-    margin-bottom: 20px;
+    font-size: 7px;
+    margin-bottom: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
 }
 
 .flux-left img {
     width: 100%;
+    height: auto;
+    margin-top: auto;
 }
 
 .flux-middle {
-    flex: 2;
+    flex: 0 0 calc(32% - 7.5px); /* Two columns at 30% equal your requested 60% */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -890,15 +895,18 @@ h2 {
 
 .flux-middle img {
     width: 100%;
+    flex: 1;
+    object-fit: cover;
 }
 
 .flux-right {
-    /* flex: 2.5; */
+    flex: 0 0 calc(23% - 7.5px);
     display: flex;
     gap: 10px;
 }
 
 .flux-right-icons {
+    flex: 0 0 45%; /* Responsive width for icons to fill */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -909,22 +917,23 @@ h2 {
 }
 
 .flux-right-text {
-    width: 200px;
+    flex: 1; /* Balance width */
 }
 
 .flux-right-text h6 {
     color: #323232;
-    font-size: 12px;
-    margin-bottom: 5px;
+    font-size: 8px;
+    margin-bottom: 2px;
     font-family: Kanit, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    line-height: 0.6rem;
 }
 
 .flux-right-text p {
     color: #000000;
-    font-size: 8px;
-    line-height: 130%;
-    margin-bottom: 20px;
+    font-size: 7px;
+    line-height: 105%;
+    margin-bottom: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
 }
@@ -933,8 +942,13 @@ h2 {
 .models-grid-section {
     background-color: #3E3D3B;
     margin: 10px 0;
-    width: 100%;
-    padding: 10px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 15px 4vw;
     box-sizing: border-box;
 }
 
@@ -959,6 +973,12 @@ h2 {
     gap: 10px;
     width: 100%;
     align-items: flex-start;
+    justify-content: space-between;
+}
+
+.models-bottom-images {
+    display: flex;
+    gap: 10px;
 }
 
 .models-text {
