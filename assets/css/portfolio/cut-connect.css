@@ -199,7 +199,7 @@ h2 {
 .detail-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 7px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -227,7 +227,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 /* 1. Split Section (Top) */
@@ -960,20 +960,36 @@ h2 {
   box-sizing: border-box;
 }
 
-.models-row-5,
+.models-row-5 {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.models-row-5 img {
+  display: block;
+  height: auto;
+  width: 0;
+  flex-basis: 0;
+  min-width: 0;
+}
+
 .models-row-4 {
   display: flex;
   gap: 10px;
   width: 100%;
   margin-bottom: 10px;
+  align-items: stretch;
 }
 
-.models-row-5 img,
 .models-row-4 img {
-  flex: 1;
-  min-width: 0;
-  width: 100%;
+  display: block;
   height: auto;
+  width: 0;
+  flex-basis: 0;
+  min-width: 0;
 }
 
 .models-row-bottom {
@@ -981,16 +997,25 @@ h2 {
   gap: 10px;
   width: 100%;
   align-items: flex-start;
-  justify-content: space-between;
 }
 
 .models-bottom-images {
   display: flex;
   gap: 10px;
+  flex: 1;
+  min-width: 0;
+  align-items: stretch;
+}
+.models-bottom-images img {
+  display: block;
+  width: 0;
+  height: auto;
+  flex-basis: 0;
+  min-width: 0;
 }
 
 .models-text {
-  width: 300px;
+  flex: 0 0 300px;
   color: white;
 }
 
