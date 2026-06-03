@@ -663,12 +663,12 @@ h2 {
   display: flex;
   gap: 15px;
   width: auto;
-  margin-left: -15px;
+  /* margin-left: -15px; */
   margin-right: 0px;
   align-items: flex-start;
   background-color: #e5dece;
-  padding: 10px 0px 10px 15px;
-  margin-bottom: -75px;
+  padding: 15px 0px 10px 15px;
+  margin-bottom: -95px;
   margin-top: -10px;
 }
 
@@ -726,7 +726,9 @@ h2 {
 .icon-35 {
   width: 35%;
 }
-
+.gap-content {
+  padding-top: 70%;
+}
 .info-middle {
   flex: 0 0 calc(15% - 10px);
   height: 100%;
@@ -755,7 +757,7 @@ h2 {
   flex: 0 0 calc(32% - 10px);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
   z-index: 2;
   background-color: #e5dece;
   padding: 0px 15px 15px 15px;
@@ -765,7 +767,7 @@ h2 {
   width: 100%;
 }
 
-.perspective-container {
+/* .perspective-container {
   position: relative;
   width: 100vw;
   left: 50%;
@@ -776,12 +778,40 @@ h2 {
   padding: 0 4vw;
   z-index: 1;
   padding-top: 30px;
+} */
+
+.perspective-container {
+  position: relative;
+  width: 100%;
+  padding: 30px 0 0 0;
+  z-index: 1;
+}
+.perspective-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background-color: #f0ede6;
+  z-index: -1;
 }
 
 .perspective-container img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.perspective-box {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.perspective-box img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .overlay-content {
@@ -792,17 +822,17 @@ h2 {
 
 .top-right {
   top: 10px;
-  left: 53%;
+  left: 53.5%;
   width: 15%;
   padding: 0 15px 0 0;
 }
 
 .top-left {
   top: 10%;
-  left: 68%;
-  right: 4vw; /* Keeps the main container right padding */
+  left: 69%;
+  right: 0vw; /* Keeps the main container right padding */
   width: auto;
-  padding: 20px 10px 0 10px;
+  padding: 45px 10px 0 10px;
 }
 
 .overlay-content p {
