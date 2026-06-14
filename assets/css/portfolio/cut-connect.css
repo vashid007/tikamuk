@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #f0ede6;
+  background: #f1eee6;
 }
 
 img {
@@ -123,6 +123,7 @@ h2 {
 .map-left {
   display: flex;
   align-items: center;
+  gap: 25px;
 }
 
 /* both images same size height-wise by adjusting width */
@@ -669,7 +670,7 @@ h2 {
   background-color: #e5dece;
   padding: 15px 0px 10px 15px;
   margin-bottom: -95px;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .info-left {
@@ -727,13 +728,16 @@ h2 {
   width: 35%;
 }
 .gap-content {
-  padding-top: 70%;
+  padding-top: 52.5%;
 }
 .info-middle {
   flex: 0 0 calc(15% - 10px);
   height: 100%;
   flex-direction: column;
   justify-content: center;
+}
+.info-middle-2 {
+  padding-top: 15.5%;
 }
 
 .info-middle h6 {
@@ -822,14 +826,14 @@ h2 {
 
 .top-right {
   top: 10px;
-  left: 53.5%;
+  left: 54%;
   width: 15%;
   padding: 0 15px 0 0;
 }
 
 .top-left {
   top: 10%;
-  left: 69%;
+  left: 69.5%;
   right: 0vw; /* Keeps the main container right padding */
   width: auto;
   padding: 45px 10px 0 10px;
