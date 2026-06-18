@@ -273,9 +273,10 @@ h2 {
 }
 
 .scan-image-box .scan-full-img {
-  width: 100%;
+  width: 104%;
   height: 100%;
   object-fit: contain;
+  object-position: top center;
   display: block;
 }
 .split-right {
@@ -324,7 +325,6 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   width: 100%;
-  margin-top:;
 }
 
 .four-col-row img {
@@ -743,7 +743,7 @@ h2 {
   width: 34.5%;
 }
 .gap-content {
-  padding-top: 42%;
+  padding-top: 41.8%;
 }
 .info-middle {
   flex: 0 0 calc(15% - 10px);
@@ -752,7 +752,7 @@ h2 {
   justify-content: center;
 }
 .info-middle-2 {
-  padding-top: 4.5%;
+  padding-top: 4.2%;
 }
 
 .info-middle h6 {
@@ -764,7 +764,7 @@ h2 {
 }
 
 .info-middle p {
-  margin-left: 10px;
+  margin-left: 12px;
   line-height: 1.1;
   color: #000000;
   font-size: 7px;
@@ -844,6 +844,10 @@ h2 {
   left: 54%;
   width: 15%;
   padding: 0 15px 0 0;
+  text-align: end;
+}
+.top-right p {
+  color: #73140c !important;
 }
 
 .top-left {
@@ -864,10 +868,10 @@ h2 {
 
 .overlay-content h1 {
   color: #323232;
-  font-size: 9px;
+  font-size: 8px;
   margin-bottom: 5px;
   font-family: Kanit, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -909,11 +913,11 @@ h2 {
 .flux-bridge-info {
   display: flex;
   gap: 10px;
-  width: 100%;
+  width: calc(100% - 8px);
   align-items: stretch;
   background-color: #e5dfd1;
-  padding: 11px 0px;
-  margin-top: -10px;
+  padding: 11px 10px;
+  margin: -10px auto 0;
   z-index: 99;
 }
 
@@ -927,11 +931,11 @@ h2 {
 .flux-left h6 {
   color: #323232;
   font-size: 7px;
-  margin-bottom: 2px;
-  font-family: Kanit, sans-serif;
-  font-weight: 500;
-  line-height: 0.6rem;
-  margin-top: -1px;
+  margin-bottom: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  line-height: 0.5rem;
+  margin-top: -1.5px;
 }
 
 .flux-left p {
@@ -986,11 +990,11 @@ h2 {
 .flux-right-text h6 {
   color: #323232;
   font-size: 7px;
-  margin-bottom: 2px;
-  font-family: Kanit, sans-serif;
-  font-weight: 500;
-  line-height: 0.6rem;
-  margin-top: -1px;
+  margin-bottom: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  line-height: 0.5rem;
+  margin-top: -1.5px;
 }
 
 .flux-right-text p {
