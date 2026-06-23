@@ -954,11 +954,34 @@ h2 {
   z-index: 99;
 }
 
+/* .flux-left {
+  flex: 0 0 calc(13% - 7.5px);
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+} */
 .flux-left {
   flex: 0 0 calc(13% - 7.5px);
   text-align: end;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+.flux-left-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 0px;
+}
+.flux-left-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.flux-left-bottom > div {
+  height: 100%;
 }
 
 .flux-left h6 {
@@ -991,7 +1014,7 @@ h2 {
 }
 
 .flux-middle {
-  flex: 0 0 calc(32% - 7.5px); /* Two columns at 30% equal your requested 60% */
+  flex: 0 0 calc(32% - 7.5px);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1006,25 +1029,50 @@ h2 {
 .flux-right {
   flex: 0 0 calc(23% - 7.5px);
   display: flex;
-  gap: 10px;
-}
-
-.flux-right-icons {
-  flex: 0 0 45%; /* Responsive width for icons to fill */
-  display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.flux-right-icons img {
+.flux-right-row {
+  display: flex;
+  gap: 10px;
   width: 100%;
+  align-items: flex-start;
 }
 
-.flux-right-text {
-  flex: 1; /* Balance width */
+.flux-right-row:nth-child(1) {
+  flex: 0 0 auto;
 }
 
-.flux-right-text h6 {
+.flux-right-row:nth-child(2) {
+  flex: 1;
+}
+
+.flux-icon-top,
+.flux-icon-bottom {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.flux-icon-top img,
+.flux-icon-bottom img {
+  width: 100%;
+  height: auto;
+}
+
+.flux-right-top,
+.flux-right-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flux-right-top h6,
+.flux-right-bottom h6 {
   color: #323232;
   font-size: 7px;
   margin-bottom: 4px;
@@ -1034,7 +1082,8 @@ h2 {
   margin-top: -1.5px;
 }
 
-.flux-right-text p {
+.flux-right-top p,
+.flux-right-bottom p {
   color: #000000;
   font-size: 7px;
   line-height: 105%;
@@ -1224,8 +1273,17 @@ h2 {
   .info-right,
   .flux-left,
   .flux-middle,
-  .flux-right,
-  .flux-right-text {
+  .flux-right {
+    width: 100%;
+    flex: auto;
+  }
+
+  .flux-right-row {
+    flex-direction: column;
+  }
+
+  .flux-icon-top,
+  .flux-icon-bottom {
     width: 100%;
     flex: auto;
   }
