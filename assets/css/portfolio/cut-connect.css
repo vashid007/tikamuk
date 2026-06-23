@@ -1046,6 +1046,7 @@ h2 {
 
 .flux-right-row:nth-child(2) {
   flex: 1;
+  align-items: stretch;
 }
 
 .flux-icon-top,
@@ -1057,10 +1058,15 @@ h2 {
   gap: 10px;
 }
 
-.flux-icon-top img,
-.flux-icon-bottom img {
+.flux-icon-top img {
   width: 100%;
   height: auto;
+}
+
+.flux-icon-bottom img {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
 }
 
 .flux-right-top,
@@ -1286,6 +1292,11 @@ h2 {
   .flux-icon-bottom {
     width: 100%;
     flex: auto;
+  }
+
+  .flux-icon-bottom img {
+    height: auto;
+    flex: none;
   }
 
   .flux-left {
