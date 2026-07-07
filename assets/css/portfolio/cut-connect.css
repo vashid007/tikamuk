@@ -191,7 +191,7 @@ h2 {
   }
 
   .map-left .img1,
-  .map-left .img2 {
+  .map-left .img2-mobile {
     width: 100%;
     margin-left: 0;
   }
@@ -451,7 +451,8 @@ h2 {
   padding-top: 10px;
   font-family: "Courier New", Courier, monospace;
   font-weight: 400;
-  font-size: 7px;
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 
 .right-content h4 {
@@ -578,7 +579,7 @@ h2 {
 
   /* Push content above/below the image section */
   .right-content {
-    margin-bottom: 150px;
+    margin-bottom: 20px;
     /* space for image */
   }
 
@@ -1188,6 +1189,9 @@ h2 {
   width: auto;
   object-fit: contain;
 }
+.margin-img {
+  margin-top: 14px;
+}
 
 /* =========================================
    MEDIA QUERIES (RESPONSIVE)
@@ -1197,24 +1201,29 @@ h2 {
   .section-1 {
     height: auto;
     padding-top: 130px;
-    flex-direction: column-reverse;
-    gap: 13px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 13px;
   }
 
   .text-content {
-    padding: 5vh 0;
+    grid-row: 2;
+    padding: 2vh 0;
+    z-index: 10;
   }
 
   .hero-image {
-    display: flex;
-    justify-content: center;
+    grid-row: 1;
+    display: block;
     width: 100%;
   }
 
   .hero-image img {
+    display: block;
     width: 100%;
     max-width: 600px;
     height: auto;
+    margin: 0 auto;
   }
 
   .split-section,
@@ -1227,6 +1236,20 @@ h2 {
   .three-col-info {
     display: flex;
     flex-direction: column;
+    background-color: #e5dece;
+
+    /* Full-width background bleed */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* Maintain correct padding and override desktop negative margins */
+    padding: 20px 4vw;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
 
   .split-left img,
@@ -1328,7 +1351,7 @@ h2 {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) and (min-width: 769px) {
   .hero-image {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
@@ -1338,7 +1361,9 @@ h2 {
   .hero-image img {
     max-width: 100vw;
   }
+}
 
+@media (max-width: 800px) {
   .image-row {
     flex-direction: column;
   }
@@ -1348,5 +1373,167 @@ h2 {
   .models-row-5 img,
   .models-row-4 img {
     width: 100%;
+  }
+}
+
+/* Specific fix for hero image not showing on mobile screens below 769px */
+@media (max-width: 768px) {
+  .section-1 {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    padding-top: 130px;
+    gap: 13px;
+  }
+  .text-content h1 {
+    font-size: 22px;
+  }
+  .text-content h2 {
+    font-size: 18px;
+    line-height: 1.2em;
+    margin-top: -7px;
+  }
+  .meta p {
+    line-height: 1.4em;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: block;
+    min-height: 250px;
+    position: relative;
+    z-index: 10;
+    flex: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transform: none !important;
+    backface-visibility: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Section 2: full-width background, single-column stacked content */
+  .map-wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 15px;
+
+    /* Reliable full-width bleed on mobile */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* Content padding — keeps text/images inset from screen edges */
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .map-left {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .map-left img {
+    width: 100%;
+    height: auto;
+  }
+
+  .scan-image-box {
+    width: 100%;
+  }
+
+  .scan-full-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Hide Scan_5 from four-col-row on mobile */
+  .scan5-in-grid {
+    display: none;
+  }
+
+  /* Show Scan_5 after image-row on mobile */
+  .scan5-mobile {
+    display: block;
+    width: 100%;
+    margin-top: 13px;
+    overflow: hidden;
+  }
+
+  .scan5-mobile img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    margin-top: -34px !important;
+    margin-bottom: -36px !important;
+  }
+  .scan6-mobile {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .scan6-mobile img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    /* margin-top: -34px !important;
+    margin-bottom: -30px !important; */
+  }
+  .margin-img {
+    margin-top: 0px;
+    margin-bottom: -15px;
+  }
+  .mobile-adj {
+    padding-bottom: 10px;
+    margin-left: -10px;
+    width: 102% !important;
+  }
+  /* ---------- SECTION 2 ---------- */
+  .mobile-only-content h2 {
+    padding-top: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .mobile-only-content p {
+    color: #fff;
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.2em;
+  }
+
+  .right-before-content,
+  .right-after-content,
+  .four-col-row,
+  .banner-right,
+  .banner-middle-top,
+  .img2 {
+    display: none;
+  }
+}
+
+/* Hide mobile-only Scan_5 duplicate on desktop */
+@media (min-width: 769px) {
+  .scan5-mobile,
+  .scan6-mobile,
+  .banner-right-mobile,
+  .img2-mobile,
+  .mobile-only-content,
+  .right-content {
+    display: none;
   }
 }

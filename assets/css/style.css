@@ -1,78 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('../fonts/Kanit/Kanit/Kanit-Light.ttf') format('truetype');
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit/Kanit-Light.ttf") format("truetype");
   font-weight: 100;
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('../fonts/Kanit/Kanit/Kanit-Regular.ttf') format('truetype');
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit/Kanit-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('../fonts/Kanit/Kanit/Kanit-Medium.ttf') format('truetype');
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit/Kanit-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Kanit';
-  src: url('../fonts/Kanit/Kanit/Kanit-Bold.ttf') format('truetype');
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit/Kanit-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Light'), local('Ubuntu-Light'), 
-       url('https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjCjBsGyN.woff2') format('woff2');
+  font-family: "Ubuntu";
+  src:
+    local("Ubuntu Light"),
+    local("Ubuntu-Light"),
+    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjCjBsGyN.woff2")
+      format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Regular'), local('Ubuntu'), local('Ubuntu-Regular'),
-       url('https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgo6eC5nkSGH.woff2') format('woff2');
+  font-family: "Ubuntu";
+  src:
+    local("Ubuntu Regular"),
+    local("Ubuntu"),
+    local("Ubuntu-Regular"),
+    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgo6eC5nkSGH.woff2")
+      format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Medium'), local('Ubuntu-Medium'), 
-       url('https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jsGyN.woff2') format('woff2');
+  font-family: "Ubuntu";
+  src:
+    local("Ubuntu Medium"),
+    local("Ubuntu-Medium"),
+    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jsGyN.woff2")
+      format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), 
-       url('https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxC7jsGyN.woff2') format('woff2');
+  font-family: "Ubuntu";
+  src:
+    local("Ubuntu Bold"),
+    local("Ubuntu-Bold"),
+    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxC7jsGyN.woff2")
+      format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
-
 html,
 body {
-  font-family: 'Kanit';
-  background-color: #F2EEE5;
+  font-family: "Kanit";
+  background-color: #f2eee5;
   overflow-x: clip;
 }
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .container {
   max-width: 92vw;
   margin: 0 auto;
 }
-
 
 /* Header Layout */
 /* ===== HEADER ===== */
@@ -83,7 +94,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: #F2EEE5;
+  background: #f2eee5;
   z-index: 1000;
 }
 
@@ -92,7 +103,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.brand img{
+.brand img {
   width: 170px;
   height: auto;
 }
@@ -126,10 +137,8 @@ body {
   transition: all 0.3s ease;
 }
 
-
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-
   .hamburger {
     display: flex;
   }
@@ -147,7 +156,9 @@ body {
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    transition: max-height 0.4s ease, padding 0.3s ease;
+    transition:
+      max-height 0.4s ease,
+      padding 0.3s ease;
   }
 
   .nav-links.active {
@@ -169,12 +180,11 @@ body {
     flex-direction: column;
     gap: 15px;
     padding: 20px;
-
   }
 
   .site-footer {
     padding-top: 40px !important;
-    color: #3E3D3E;
+    color: #3e3d3e;
     text-align: center;
     font-size: 15px;
     padding-bottom: 20px;
@@ -215,7 +225,7 @@ body {
 .popup {
   color: #fff;
   max-width: 700px;
-  background-color: #F2EEE5;
+  background-color: #f2eee5;
 }
 
 .popup-content img {
@@ -232,7 +242,7 @@ body {
 }
 
 .popup-title {
-  color: #A74E00;
+  color: #a74e00;
   font-size: 28px;
   font-weight: 400;
   text-align: left;
@@ -247,7 +257,7 @@ body {
 
 .site-footer {
   padding-top: 80px;
-  color: #3E3D3E;
+  color: #3e3d3e;
   text-align: center;
   font-size: 15px;
   padding-bottom: 20px;
@@ -255,11 +265,9 @@ body {
 
 .nav-links .active {
   text-decoration: none;
-  color: #A74E00;
+  color: #a74e00;
   font-weight: 500;
 }
-
-
 
 a {
   color: inherit;
@@ -270,46 +278,46 @@ a {
 
 /* IMAGE ZOOM MODAL */
 
-.image-modal{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /* zoomed image */
-.image-modal img{
-    max-width: 95vw;
-    max-height: 95vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+.image-modal img {
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* close button */
-#closeModal{
-    position: absolute;
-    top: 25px;
-    right: 40px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
+#closeModal {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
 
 /* zoom cursor only */
- .page-intro img:not(.no-zoom){
-      cursor: zoom-in; 
- } 
-body.modal-open{
-    overflow: hidden;
+.page-intro img:not(.no-zoom) {
+  cursor: zoom-in;
 }
-.detail-actions a{
+body.modal-open {
+  overflow: hidden;
+}
+.detail-actions a {
   border: 1px solid #000;
   height: 40px;
   width: 150px;
@@ -323,54 +331,61 @@ body.modal-open{
 }
 
 .gallery-prev:hover,
-.gallery-next:hover{
-    opacity: 0.7;
+.gallery-next:hover {
+  opacity: 0.7;
 }
 
 /* GALLERY ARROWS */
 
 .gallery-prev,
-.gallery-next{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    padding: 10px;
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
 }
 
-.gallery-prev{
-    left: 30px;
+.gallery-prev {
+  left: 30px;
 }
 
-.gallery-next{
-    right: 30px;
+.gallery-next {
+  right: 30px;
 }
 .gallery-prev,
-.gallery-next{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    padding: 10px;
-    z-index: 10000;
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  z-index: 10000;
 }
 
-.gallery-prev{
-    left: 30px;
+.gallery-prev {
+  left: 30px;
 }
 
-.gallery-next{
-    right: 30px;
+.gallery-next {
+  right: 30px;
 }
-.image-modal img{
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    display: block;
+.image-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Force GPU to keep decoded project images in memory so they don't lag when scrolling back up */
+.page-intro img {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
