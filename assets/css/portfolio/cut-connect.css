@@ -310,7 +310,7 @@ h2 {
   .image-row {
     grid-template-columns: 1fr;
     /* Single column */
-    gap: 10px;
+    gap: 13px;
   }
 
   .image-row img {
@@ -459,7 +459,7 @@ h2 {
   color: rgb(35, 46, 120);
   font-size: 7px;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .left-content h3 {
@@ -579,7 +579,8 @@ h2 {
 
   /* Push content above/below the image section */
   .right-content {
-    margin-bottom: 20px;
+    margin-top: -7px;
+    margin-bottom: 10px;
     /* space for image */
   }
 
@@ -1147,7 +1148,7 @@ h2 {
 
 .models-row-bottom {
   display: flex;
-  gap: 10px;
+  gap: 13px;
   width: 100%;
   align-items: flex-start;
 }
@@ -1208,7 +1209,7 @@ h2 {
 
   .text-content {
     grid-row: 2;
-    padding: 2vh 0;
+    padding: 23px 0 0px 0;
     z-index: 10;
   }
 
@@ -1237,6 +1238,7 @@ h2 {
     display: flex;
     flex-direction: column;
     background-color: #e5dece;
+    gap: 13px;
 
     /* Full-width background bleed */
     position: relative;
@@ -1385,6 +1387,9 @@ h2 {
     padding-top: 130px;
     gap: 13px;
   }
+  .description {
+    margin-bottom: 0px;
+  }
   .text-content h1 {
     font-size: 22px;
   }
@@ -1430,6 +1435,7 @@ h2 {
     width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
+    margin-top: 5.5vw;
 
     /* Content padding — keeps text/images inset from screen edges */
     padding-left: 4vw;
@@ -1498,16 +1504,17 @@ h2 {
     margin-bottom: -15px;
   }
   .mobile-adj {
-    padding-bottom: 15px;
-    margin-left: -10px;
-    width: 102% !important;
+    padding: 13px 0px;
   }
   /* ---------- SECTION 2 ---------- */
   .mobile-only-content h2 {
-    padding-top: 8px;
+    padding-top: 10px;
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
+  }
+  .other-text {
+    padding-top: 20px;
   }
   .mobile-only-content p {
     color: #fff;
@@ -1515,7 +1522,19 @@ h2 {
     font-family: "Courier New", Courier, monospace;
     line-height: 1.2em;
   }
+  .right-content h4 {
+    font-weight: 400;
+  }
+  .split-right {
+    gap: 13px;
+  }
+  .margin-img-1 {
+    margin: -9px 0px;
+  }
   /* ---------- SECTION 5 ---------- */
+  .content-wrapper {
+    gap: 13px;
+  }
   .section-mobile {
     position: relative;
     left: 50%;
@@ -1523,7 +1542,8 @@ h2 {
     width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 10px 0px 5px 0px;
+    padding-left: 4vw;
+    padding-right: 4vw;
   }
   .section-mobile img {
     width: 100% !important;
@@ -1572,8 +1592,11 @@ h2 {
     gap: 15px !important;
     align-items: flex-end !important;
     width: 100% !important;
-    margin-top: 0;
+    margin-top: 0px !important;
     margin-bottom: 0;
+  }
+  .icon-row {
+    margin-top: 13px;
   }
   .mobile-onlysection-six {
     background-color: #e5dfd1;
@@ -1583,7 +1606,7 @@ h2 {
     width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 15px 4vw;
+    padding: 13px 4vw;
   }
 
   .mobile-onlysection-six .icon-row .icon-column {
@@ -1611,7 +1634,7 @@ h2 {
     display: block !important;
   }
   .sixth-2 {
-    padding: 15px 0 0px 0px;
+    padding: 13px 0 0px 0px;
   }
   .sixth-content {
     padding: 10px 0px 13px 0px;
@@ -1637,14 +1660,14 @@ h2 {
   .sixth-3,
   .sixth-4,
   .sixth-5 {
-    padding-top: 15px;
+    padding-top: 13px;
   }
 
   /* ---------- SECTION 7 ---------- */
   .seventh-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 13px;
     width: 100%;
   }
 
@@ -1656,7 +1679,7 @@ h2 {
 
   .models-bottom-images {
     flex-direction: column;
-    gap: 10px;
+    gap: 13px;
     width: 100%;
   }
 
@@ -1669,7 +1692,7 @@ h2 {
   .models-text {
     flex: none;
     color: white;
-    padding: 10px 0px 20px 0px;
+    padding: 12px 0px 22px 0px;
   }
 
   .right-before-content,
@@ -1712,6 +1735,20 @@ h2 {
   }
   .hide-mobile {
     display: none !important;
+  }
+  .last-image-mobile {
+    margin: -13px 0 -7px 0;
+  }
+  .models-text p {
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+  }
+  .models-text h6 {
+    margin-bottom: 15px;
+    font-family: Kanit, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
   }
 }
 

@@ -90,10 +90,25 @@ pageImages.forEach(img => {
   img.addEventListener("click", function(){
 
     const parent = img.closest(".single-items");
-    const localExtraImages = parent ? parent.querySelectorAll(".gallery-image") : [];
+    const localExtraImages = parent ? Array.from(parent.querySelectorAll(".gallery-image")) : [];
 
-    if (localExtraImages.length > 0) {
-      images = Array.from(localExtraImages);
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const visibleExtraImages = localExtraImages.filter(el => {
+      const parentGallery = el.closest(".extra-gallery");
+      if (isMobile) {
+        if (el.classList.contains("hide-mobile") || (parentGallery && parentGallery.classList.contains("hide-mobile"))) {
+          return false;
+        }
+      } else {
+        if (el.classList.contains("hide-desktop") || (parentGallery && parentGallery.classList.contains("hide-desktop"))) {
+          return false;
+        }
+      }
+      return true;
+    });
+
+    if (visibleExtraImages.length > 0) {
+      images = visibleExtraImages;
     } else {
       images = [img];
     }
