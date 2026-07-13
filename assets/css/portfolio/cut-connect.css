@@ -531,7 +531,6 @@ h2 {
 
   .right-content h2,
   .left-content h2,
-  .right-content h4,
   .left-content h3 {
     font-size: 14px;
   }
@@ -1112,6 +1111,7 @@ h2 {
   margin-right: -50vw;
   padding: 15px 4vw;
   box-sizing: border-box;
+  margin-top: -1px;
 }
 
 .models-row-5 {
@@ -1523,7 +1523,10 @@ h2 {
     line-height: 1.2em;
   }
   .right-content h4 {
-    font-weight: 400;
+    color: rgb(35, 46, 120);
+    font-size: 12px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
   }
   .split-right {
     gap: 13px;
@@ -1534,6 +1537,9 @@ h2 {
   /* ---------- SECTION 5 ---------- */
   .content-wrapper {
     gap: 13px;
+  }
+  .info-left > img {
+    margin-top: -7px;
   }
   .section-mobile {
     position: relative;
@@ -1549,6 +1555,7 @@ h2 {
     width: 100% !important;
     height: auto !important;
     display: block;
+    margin-bottom: -5px;
   }
   .info-right > img {
     padding-left: 0px !important;
@@ -1575,8 +1582,13 @@ h2 {
   .perspective-box {
     margin-top: -18px;
   }
-
+  .map-zoom-1 {
+    margin-bottom: -5px;
+  }
   /* ---------- SECTION 6 ---------- */
+  .perspective-box img {
+    margin-top: -4px;
+  }
   .flux-bridge-info {
     position: relative;
     left: 50%;
@@ -1737,12 +1749,13 @@ h2 {
     display: none !important;
   }
   .last-image-mobile {
-    margin: -13px 0 -7px 0;
+    margin: -10px 0 -7px 0;
   }
   .models-text p {
     font-size: 12px;
     font-family: "Courier New", Courier, monospace;
     font-weight: 400;
+    margin-top: -10px;
   }
   .models-text h6 {
     margin-bottom: 15px;
