@@ -166,7 +166,7 @@ footer.site-footer .container {
 /* Icon Gallery Grid */
 .icon-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1182fr 1182fr 1182fr 1369fr;
   gap: 10px;
   width: 100%;
   margin: 40px 0;
@@ -182,35 +182,52 @@ footer.site-footer .container {
 .text-block {
   display: flex;
   flex-direction: column;
+  height: 450px;
+  box-sizing: border-box;
 }
 
 .text-block h6 {
-  color: #fffeff;
-  font-family: Kanit;
-  font-weight: 500;
-  font-style: Medium;
+  font-family: "Kanit", sans-serif;
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
+  font-weight: 500;
+  color: #efefef;
   margin-bottom: 10px;
 }
 
 .text-block p {
-  font-family: "Courier Prime", monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 400;
-  font-style: Regular;
   font-size: 8px;
-  line-height: 118%;
-  letter-spacing: 2%;
-  color: #fffeff;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #ffffff;
 }
 
 .concept-sketch {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  flex: 1 1 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: bottom;
   margin-top: auto;
   padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.systems-materials {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(239, 239, 239);
+  text-align: right;
+  margin-top: -5px;
+  position: relative;
+  z-index: 5;
 }
 
 /* =========================================
@@ -268,9 +285,29 @@ footer.site-footer .container {
   .concept-sketch {
     width: 100%;
     height: auto;
+    flex: initial;
     padding: 15px 0px;
   }
   .text-block {
+    height: auto;
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .text-block p {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #ffffff;
+  }
+  .text-block h6 {
+    font-family: "Kanit", sans-serif;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #f0f0f0;
   }
 }
