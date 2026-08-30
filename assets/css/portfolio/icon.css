@@ -125,7 +125,7 @@ footer.site-footer .container {
 .detail-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 1.978%;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -140,6 +140,7 @@ footer.site-footer .container {
   white-space: nowrap;
   font-size: 14px;
   flex-shrink: 0;
+  margin-top: -27px;
 }
 
 /* =========================================
@@ -167,15 +168,33 @@ footer.site-footer .container {
 .icon-gallery {
   display: grid;
   grid-template-columns: 1182fr 1182fr 1182fr 1369fr;
-  gap: 10px;
+  row-gap: 1.978%;
+  column-gap: 1.98%;
   width: 100%;
-  margin: 40px 0;
+  margin: 1.978% 0;
 }
 
 .gallery-item {
   width: 100%;
-  height: 450px;
+  height: auto;
+  aspect-ratio: 1182 / 1575;
   object-fit: cover;
+}
+
+.icon-gallery .single-items {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1369 / 1575;
+}
+
+.icon-gallery .single-items .gallery-item {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1369 / 1575;
+}
+
+.icon-gallery > :nth-child(4n) {
+  aspect-ratio: 1369 / 1575;
 }
 
 /* Text Block inside Grid */
@@ -225,7 +244,7 @@ footer.site-footer .container {
   letter-spacing: 0%;
   color: rgb(239, 239, 239);
   text-align: right;
-  margin-top: -5px;
+  margin-top: -2px;
   position: relative;
   z-index: 5;
 }
@@ -251,7 +270,7 @@ footer.site-footer .container {
   height: auto;
   overflow: hidden;
   cursor: pointer;
-  margin: 15px 0 30px 0;
+  margin: 15px 0 15px 0;
 }
 
 .mobile-looper-container > img {
@@ -332,7 +351,7 @@ footer.site-footer .container {
     width: 100%;
     height: auto;
     flex: initial;
-    padding: 25px 0px 10px 0px;
+    padding: 30px 0px 15px 0px;
   }
   .text-block {
     height: auto;
@@ -341,6 +360,15 @@ footer.site-footer .container {
 }
 
 @media (max-width: 520px) {
+  .text-content h1 {
+    font-size: 22px;
+    padding-top: 17px;
+  }
+  .text-content h2 {
+    font-size: 18px;
+    line-height: 1.2em;
+    margin-top: -7px;
+  }
   .text-block p {
     font-family: "Courier New", Courier, monospace;
     font-weight: 400;
@@ -355,5 +383,8 @@ footer.site-footer .container {
     line-height: 100%;
     letter-spacing: 0%;
     color: #f0f0f0;
+  }
+  .detail-actions {
+    margin-top: 27px;
   }
 }
