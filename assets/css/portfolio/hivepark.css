@@ -29,7 +29,7 @@ h1 {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 27px;
+  font-size: 18px;
   line-height: 100%;
   letter-spacing: 0%;
   color: rgb(156, 83, 29);
@@ -48,18 +48,18 @@ h2 {
 }
 
 .meta p {
-  color: rgb(50, 50, 50);
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
+  font-family: Kanit;
   font-size: 12px;
-  line-height: 140%;
+  line-height: 100%;
   letter-spacing: 0%;
   margin-bottom: 10px;
+  color: #3e3d3e;
+  font-weight: 300;
 }
 
 .meta-strong {
   font-family: "Kanit", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(50, 50, 50);
 }
 
@@ -120,7 +120,7 @@ h2 {
 .detail-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  margin-top: 7px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -148,7 +148,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0vh 0 13vh 0;
+  padding: 0vh 0 3vh 0;
 }
 
 .hero-image img {
@@ -167,7 +167,7 @@ h2 {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
-  margin-top: 10px;
+  margin-top: 13px;
   margin-bottom: 10px;
 }
 
@@ -228,7 +228,7 @@ h2 {
 .dark-section {
   background-color: #3e3d3e;
   padding: 40px calc(50vw - 50%);
-  margin: 40px 0;
+  margin: 40px 0 18px 0px;
   width: 100vw;
   position: relative;
   left: 50%;
