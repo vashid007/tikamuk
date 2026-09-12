@@ -276,7 +276,7 @@ h2 {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
-  margin: 15px 0 10px 0;
+  margin: 0px 0 10px 0;
 }
 
 .text-column p {
@@ -287,6 +287,9 @@ h2 {
   line-height: 120%;
   letter-spacing: 0%;
   margin: 0;
+}
+.hide-desktop {
+  display: none;
 }
 
 /* =========================================
@@ -299,17 +302,17 @@ h2 {
     padding-top: 80px;
     flex-direction: column-reverse;
     gap: 13px;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
   }
 
   .text-content {
-    padding: 5vh 0;
+    padding: 7vh 0 0 0;
   }
 
   .hero-image {
     width: 100%;
     justify-content: center;
-    padding: 0;
+    padding: 10vh 0 0 0;
   }
   .hero-image img {
     max-width: 60%;
@@ -354,13 +357,29 @@ h2 {
     display: none;
   }
   .content-section h6 {
-    padding-top: 10px;
+    padding-top: 20px;
   }
   .text-column h6 {
     font-size: 13px;
-    margin: 10px 0 5px 0;
+    margin: 0px 0 5px 0;
   }
   .text-column p {
     font-size: 12px;
+  }
+  .text-content {
+    font-size: 22px;
+  }
+  .dark-section {
+    margin: 30px 0 10px 0px;
+    padding: 30px calc(50vw - 50%);
+  }
+  .dark-section .image-row {
+    gap: 30px;
+  }
+  .detail-actions {
+    margin-top: -5px;
+  }
+  .hide-mobile {
+    display: none;
   }
 }
