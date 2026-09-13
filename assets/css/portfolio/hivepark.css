@@ -33,7 +33,7 @@ h1 {
   line-height: 100%;
   letter-spacing: 0%;
   color: rgb(156, 83, 29);
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 
 h2 {
@@ -52,9 +52,14 @@ h2 {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
-  margin-bottom: 10px;
   color: #3e3d3e;
   font-weight: 300;
+}
+.first-p {
+  padding-bottom: 10px;
+}
+.second-p {
+  padding-bottom: 20px;
 }
 
 .meta-strong {
@@ -276,7 +281,7 @@ h2 {
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 0%;
-  margin: 0px 0 10px 0;
+  margin: 13px 0 10px 0;
 }
 
 .text-column p {
@@ -302,7 +307,7 @@ h2 {
     padding-top: 80px;
     flex-direction: column-reverse;
     gap: 13px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 
   .text-content {
@@ -358,10 +363,11 @@ h2 {
   }
   .content-section h6 {
     padding-top: 20px;
+    margin-top: 10px;
   }
   .text-column h6 {
     font-size: 13px;
-    margin: 0px 0 5px 0;
+    margin: 0px 0 10px 0;
   }
   .text-column p {
     font-size: 12px;
@@ -377,9 +383,13 @@ h2 {
     gap: 30px;
   }
   .detail-actions {
-    margin-top: -5px;
+    margin-top: -2px;
   }
   .hide-mobile {
     display: none;
+  }
+  h1 {
+    font-size: 22px;
+    margin-bottom: 14px;
   }
 }
