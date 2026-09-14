@@ -200,12 +200,10 @@ h2 {
 .detail-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 7px;
+  align-items: center;
+  margin-top: 50px;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
-  left: 0;
-  right: 0;
 }
 
 .detail-actions .btn {
@@ -213,9 +211,20 @@ h2 {
   border: none;
   padding: 0;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 13px;
   flex-shrink: 0;
+  width: auto;
+  height: auto;
   color: #3e3d3e;
+  display: inline-block;
+}
+
+.detail-actions > div:first-child {
+  text-align: left;
+}
+
+.detail-actions > div:last-child {
+  text-align: right;
 }
 
 /* =========================================

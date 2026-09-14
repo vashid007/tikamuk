@@ -133,12 +133,10 @@ footer.site-footer .container {
 .detail-actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 50px;
     width: 100%;
     box-sizing: border-box;
-    position: relative;
-    left: 0;
-    right: 0;
 }
 
 .detail-actions .btn {
@@ -146,8 +144,20 @@ footer.site-footer .container {
     border: none;
     padding: 0;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 13px;
     flex-shrink: 0;
+    width: auto;
+    height: auto;
+    color: #3e3d3e;
+    display: inline-block;
+}
+
+.detail-actions > div:first-child {
+    text-align: left;
+}
+
+.detail-actions > div:last-child {
+    text-align: right;
 }
 
 /* =========================================
