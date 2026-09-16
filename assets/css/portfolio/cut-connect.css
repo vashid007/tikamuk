@@ -1772,6 +1772,9 @@ h2 {
     font-weight: 500;
     font-size: 13px;
   }
+  .detail-actions {
+    margin-top: 11px;
+  }
 }
 
 /* Hide mobile-only Scan_5 duplicate on desktop */

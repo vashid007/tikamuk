@@ -428,4 +428,7 @@ footer.site-footer .container {
     line-height: 1.2em;
     margin-top: -7px;
   }
+  .detail-actions {
+    margin-top: 4px;
+  }
 }
