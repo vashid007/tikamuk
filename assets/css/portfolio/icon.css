@@ -140,8 +140,14 @@ footer.site-footer .container {
   flex-shrink: 0;
   width: auto;
   height: auto;
-  color: #3e3d3e;
+  color: #ffffff;
   display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.detail-actions .btn:hover {
+  opacity: 0.75;
 }
 
 .detail-actions > div:first-child {
