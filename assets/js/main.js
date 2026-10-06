@@ -10,52 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    const normalizedHref = href.replace("./", "");
-    if (
-      normalizedHref === currentPath ||
-      (currentPath === "" && normalizedHref === "index.html")
-    ) {
+    const normalizedHref = href.split("/").pop();
+    if (normalizedHref === currentPath) {
       link.classList.add("active");
     }
   });
 });
 // navmenu
 const hamburger = document.getElementById("hamburger");
-  const navLinks = document.querySelector(".nav-links");
+const navMenu = document.querySelector(".nav-links");
 
+if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
-
- 
-document.addEventListener("DOMContentLoaded", function () {
-
-  const links = document.querySelectorAll(".nav-links a");
-  const currentPage = window.location.pathname.split("/").pop();
-
-  links.forEach(link => {
-    const linkPage = link.getAttribute("href");
-
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
-
-});
-
-// const hamburger = document.getElementById("hamburger");
-//   const nav = document.getElementById("nav");
-
-//   hamburger.addEventListener("click", () => {
-//     nav.classList.toggle("active");
-//   });
+}
 
 document.addEventListener("DOMContentLoaded", function(){
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const closeModal = document.getElementById("closeModal");
+
+if (!modal || !modalImg || !closeModal) return;
 
 const pageImages = document.querySelectorAll(".page-intro img:not(.no-zoom)");
 const extraImages = document.querySelectorAll(".gallery-image");

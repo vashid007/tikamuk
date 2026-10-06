@@ -2,7 +2,6 @@ body {
   background-color: rgb(62, 61, 62);
   color: #ffffff;
 }
-
 img {
   display: block;
   width: 100%;
@@ -82,10 +81,10 @@ h2 {
   font-size: 12px;
   line-height: 120%;
   letter-spacing: 0%;
-  text-align: justify;
+  text-align: left;
   color: rgb(255, 255, 255);
   margin: 0;
-  padding-top: 9px;
+  padding-top: 15px;
 }
 
 /* ----- SECTION 2 ----- */
@@ -170,26 +169,25 @@ footer.site-footer .container {
    ========================================= */
 
 /* Hero Section Updates */
+/* Top/bottom spacing matches Urbanizing Sand: 100px section padding, 2vw gap to section 2 */
 .section-1 {
-  height: 100vh;
-  overflow: hidden;
+  margin-top: 0;
+  padding-top: 100px;
+  height: auto;
 }
 
 .hero-image {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
   flex: 1;
 }
 
 .hero-image img {
-  height: 100vh;
+  height: calc(100vh - 100px - 2vw);
   width: auto;
-  max-height: 97.5vh;
   max-width: 100%;
   object-fit: contain;
-  padding-top: 60px;
 }
 
 /* Split Gallery (Concept Sketches) */
@@ -197,6 +195,7 @@ footer.site-footer .container {
   display: flex;
   gap: 20px;
   width: 100%;
+  margin-top: 2vw;
   margin-bottom: 50px;
   align-items: flex-start;
 }
@@ -299,6 +298,15 @@ footer.site-footer .container {
   display: block;
 }
 
+/* Flashing image effect (section 6) */
+.image-grid .looper-container > img {
+  display: none;
+}
+
+.image-grid .looper-container > img.slideshow-active {
+  display: block;
+}
+
 /* =========================================
    MEDIA QUERIES (RESPONSIVE)
    ========================================= */
@@ -325,6 +333,10 @@ footer.site-footer .container {
   .hero-image img {
     width: 100%;
     max-width: 600px;
+  }
+
+  .split-gallery {
+    margin-top: 0;
   }
 
   /* Stack gallery sections on tablet */

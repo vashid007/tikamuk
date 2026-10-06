@@ -14,7 +14,7 @@
 <body style="background-color: rgb(62, 61, 62);">
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="index.html"><img src="../assets/images/common/logo.png" id="final-site-logo"></a>
+            <a class="brand" href="../index.html"><img src="../assets/images/common/logo.png" id="final-site-logo"></a>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
@@ -944,8 +944,11 @@
                         class="gallery-image">
             </div>
             </div>
-            <div class="single-items">
+            <div class="single-items looper-container">
             <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_2_1).webp" >
+            <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_2_2).webp" >
+            <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_2_3).webp" >
+            <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_2_4).webp" >
             <div class="extra-gallery" style="display:none;">
                     <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_Zoom_2_1).webp" class="gallery-image">
                     <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_Zoom_2_2).webp" class="gallery-image">
@@ -953,8 +956,9 @@
                     <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_Zoom_2_4).webp" class="gallery-image">
             </div>
             </div>
-            <div class="single-items">
+            <div class="single-items looper-container">
             <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_3_1).webp">
+            <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_3_2).webp">
             <div class="extra-gallery" style="display:none;">
                     <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_Zoom_3_1).webp" class="gallery-image">
                     <img src="../assets/images/portfolio/project6/pr 6/section 6/6 (Render_Zoom_3_2).webp" class="gallery-image">
@@ -968,7 +972,7 @@
             </div>
         </div>
 
-        <div>
+        <div style="padding-top: 1%;">
             <img src="../assets/images/portfolio/project6/pr 6/TIKA Logo (Acad_Proj_4).gif" class="no-zoom" alt="">
         </div>
 
@@ -999,6 +1003,30 @@
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/animations.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const looperContainers = document.querySelectorAll(".looper-container");
+
+            looperContainers.forEach((container, index) => {
+                // Only target the main images, not the ones in extra-gallery
+                const images = container.querySelectorAll(":scope > img");
+
+                if (images.length > 0) {
+                    let currentIndex = 0;
+                    images[0].classList.add("slideshow-active");
+
+                    // Stagger the start of each looper to make it feel more organic
+                    setTimeout(() => {
+                        setInterval(() => {
+                            images[currentIndex].classList.remove("slideshow-active");
+                            currentIndex = (currentIndex + 1) % images.length;
+                            images[currentIndex].classList.add("slideshow-active");
+                        }, 300); // 0.3s loop
+                    }, index * 100); // 100ms delay between each box start
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
