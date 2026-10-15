@@ -221,6 +221,58 @@ footer.site-footer .container {
   object-fit: contain;
 }
 
+/* [ STUDY MODEL ] text - mobile only */
+.gallery-left .study {
+  display: none;
+}
+
+/* Study Model flashing images - mobile only */
+.study-looper {
+  display: none;
+}
+
+.study-looper > img,
+.plans-looper > img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.study-looper > img.slideshow-active,
+.plans-looper > img.slideshow-active {
+  display: block;
+}
+
+/* Section 3 plans - mobile only */
+.plans-mobile {
+  display: none;
+}
+
+.plans-mobile img {
+  width: 100%;
+  height: auto;
+}
+
+/* Section 4 plans with overlays - mobile only */
+.materials-mobile {
+  display: none;
+}
+
+.materials-mobile > img {
+  width: 100%;
+  height: auto;
+}
+
+/* Section 5 images with overlays - mobile only */
+.systems-mobile {
+  display: none;
+}
+
+.systems-mobile > img {
+  width: 100%;
+  height: auto;
+}
+
 .gallery-right-grid {
   flex: 1;
   display: grid;
@@ -314,25 +366,27 @@ footer.site-footer .container {
 @media (max-width: 1024px) {
   .section-1 {
     height: auto;
-    padding-top: 80px;
+    padding-top: 130px;
     flex-direction: column-reverse;
     gap: 13px;
     overflow: visible;
   }
 
   .text-content {
-    padding: 5vh 0;
+    padding: 0 0 5vh;
     flex: auto;
   }
 
   .hero-image {
     width: 100%;
     flex: auto;
+    justify-content: center;
   }
 
   .hero-image img {
     width: 100%;
     max-width: 600px;
+    height: auto;
   }
 
   .split-gallery {
@@ -353,19 +407,6 @@ footer.site-footer .container {
 }
 
 @media (max-width: 800px) {
-  .hero-image {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    height: 550px;
-    padding-bottom: 120px;
-  }
-
-  .hero-image img {
-    max-width: 100vw;
-    height: 550px;
-  }
-
   /* Change grid to single column on mobile */
   .gallery-right-grid {
     grid-template-columns: 1fr;
@@ -385,5 +426,90 @@ footer.site-footer .container {
   .image-grid {
     grid-template-columns: 1fr;
     gap: 13px;
+  }
+
+  /* [ STUDY MODEL ] - matches Cut-Connect-Heal "[ MODELS ]" mobile text */
+  .gallery-left .study {
+    display: block;
+    margin-top: 0;
+    padding: 12px 0 22px 0;
+    color: #ffffff;
+    text-align: right;
+  }
+
+  .gallery-left .study h4 {
+    margin-bottom: 15px;
+    font-family: Kanit, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: normal;
+  }
+
+  .gallery-left .study p {
+    margin-top: -10px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  /* Show flashing Study Model images, hide the right side image */
+  .study-looper {
+    display: block;
+  }
+
+  .gallery-right {
+    display: none;
+  }
+
+  /* Section 3: swap the desktop plans board for the mobile layout */
+  .plans-desktop {
+    display: none;
+  }
+
+  .plans-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 13px 0;
+  }
+
+  /* Section 4: swap the desktop board for the mobile plans image */
+  .materials-desktop {
+    display: none;
+  }
+
+  .materials-mobile {
+    display: block;
+    margin: 13px 0;
+  }
+
+  /* Section 5: swap the desktop board for the mobile images */
+  .systems-desktop {
+    display: none;
+  }
+
+  .systems-mobile {
+    display: block;
+    margin: 13px 0;
+  }
+
+  /* Section 6 + 7 spacing - matches Icon mobile */
+  .image-grid {
+    margin-top: 0;
+  }
+
+  .tika-gif {
+    padding-top: 15px !important;
+  }}
+
+@media (max-width: 520px) {
+  .text-content h1 {
+    font-size: 22px;
+    padding-top: 17px;
+  }
+
+  .detail-actions {
+    margin-top: 8px;
   }
 }
