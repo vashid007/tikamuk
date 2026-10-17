@@ -428,11 +428,16 @@ footer.site-footer .container {
     gap: 13px;
   }
 
+  /* Description → Concept Sketch gap: 20px + 10px description margin = 30px (matches Icon) */
+  .text-content {
+    padding-bottom: 20px;
+  }
+
   /* [ STUDY MODEL ] - matches Cut-Connect-Heal "[ MODELS ]" mobile text */
   .gallery-left .study {
     display: block;
     margin-top: 0;
-    padding: 12px 0 22px 0;
+    padding: 27px 0 17px 0;
     color: #ffffff;
     text-align: right;
   }
