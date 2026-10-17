@@ -1,3 +1,5 @@
+/* html too, so iOS overscroll at the page bottom doesn't reveal the beige site background */
+html,
 body {
   background-color: rgb(62, 61, 62);
   color: #ffffff;
@@ -188,6 +190,14 @@ footer.site-footer .container {
   width: auto;
   max-width: 100%;
   object-fit: contain;
+}
+
+/* TIKA logo GIF: keep it off the GPU layer (style.css forces one on all images),
+   which makes this large animated GIF flicker on iOS */
+.tika-gif img {
+  will-change: auto;
+  transform: none;
+  backface-visibility: visible;
 }
 
 /* Split Gallery (Concept Sketches) */
