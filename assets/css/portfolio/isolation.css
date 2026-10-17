@@ -433,6 +433,10 @@ footer.site-footer .container {
     padding-bottom: 20px;
   }
 
+  .split-gallery {
+    margin-bottom: 0;
+  }
+
   /* [ STUDY MODEL ] - matches Cut-Connect-Heal "[ MODELS ]" mobile text */
   .gallery-left .study {
     display: block;
