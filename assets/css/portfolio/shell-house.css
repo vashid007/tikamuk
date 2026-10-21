@@ -11,69 +11,16 @@ img {
 }
 
 /* ----- SECTION 1 ----- */
-/* .section-1 {
-    margin-top: 10px;
-    display: flex;
-    height: 100vh;
-    background-color: #E5DDCD;
-    
-} */
-
-
-
-
-
+/* Layout, fonts and cover image sizing match Hive Park's cover page */
 .section-1 {
   margin-top: 10px;
   display: flex;
   height: 100vh;
-  background-color: #E5DDCD;
-  padding: 80px 4%;
-  /* Content padding */
-  width: 100vw;
-  /* Full viewport width */
-  margin-left: calc(50% - 50vw);
-  /* Shift left edge */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  align-items: center;
-  /* Vertically center content */
-  gap: 60px;
-  /* Space between text/image */
-}
-
-/* Content stays container-constrained */
-.section-1 .text-content,
-.section-1 .hero-image {
-  flex: 1;
-  max-width: 50%;
-  /* Each takes half width */
-}
-
-/* Fix hero image sizing */
-.hero-image img {
-  width: 100%;
-  /* Full column width */
-  height: auto;
-  object-fit: contain;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-1 {
-    flex-direction: column;
-    height: auto;
-    padding: 60px 4%;
-    gap: 40px;
-  }
-
-  .section-1 .text-content,
-  .section-1 .hero-image {
-    max-width: 100%;
-  }
+  background-color: rgb(241, 238, 230);
+  /* Full-width background while content stays inside .container,
+     so the text lines up with the TIKA logo */
+  box-shadow: 0 0 0 100vmax rgb(241, 238, 230);
+  clip-path: inset(0 -100vmax);
 }
 
 .text-content {
@@ -86,27 +33,43 @@ img {
 
 .hero-image {
   flex: 0 0 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0 3vh 0;
 }
 
+/* Same width cap and right offset as Hive Park, so both images share the same centre line */
 .hero-image img {
-  width: 100%;
+  width: 25%;
   height: auto;
+  object-fit: contain;
+  margin-right: 12%;
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .hero-image img {
+    margin-right: 0;
+  }
 }
 
 h1 {
-  font-family: Kanit;
+  font-family: "Kanit", sans-serif;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 27px;
+  font-style: normal;
+  font-size: 18px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #975420;
-  margin-bottom: 10px;
-
+  color: rgb(156, 83, 29);
+  margin-bottom: 13px;
 }
 
 h2 {
-
   color: #795137;
   font-family: Kanit;
   font-weight: 300;
@@ -115,19 +78,29 @@ h2 {
   line-height: 100%;
   letter-spacing: 0%;
   margin-bottom: 10px;
-
-
 }
 
 .meta p {
-  color: #3E3D3E;
-  font-family: Kanit;
-  font-weight: 500;
-  font-style: Medium;
+  font-family: "Kanit", sans-serif;
   font-size: 12px;
-  line-height: 140%;
+  line-height: 100%;
   letter-spacing: 0%;
-  margin-bottom: 10px;
+  color: rgb(50, 50, 50);
+  font-weight: 300;
+}
+
+.first-p {
+  padding-bottom: 10px;
+}
+
+.second-p {
+  padding-bottom: 20px;
+}
+
+.meta-strong {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  color: rgb(50, 50, 50);
 }
 
 .description {
@@ -138,20 +111,86 @@ h2 {
 }
 
 .description p {
-  font-family: "Courier Prime", monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 400;
-  font-style: Regular;
+  font-style: normal;
   font-size: 12px;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0%;
-  text-align: justify;
-  color: #3E3D3E;
-
-
-
+  color: rgb(0, 0, 0);
 }
 
 /* ----- SECTION 2 ----- */
+/* Single screen display image with Note_1–3 overlays */
+.notes-board {
+  margin-top: 50px;
+}
+
+.notes-board > img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .notes-board {
+    margin-top: 13px;
+  }
+}
+
+/* ----- SECTION 3 ----- */
+/* Full-width dark padding band behind the Partis Pris image (same approach as Hive Park's dark section) */
+.partis-section {
+  background-color: rgb(62, 61, 62);
+  padding: 40px calc(50vw - 50%);
+  margin: 50px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.partis-section img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .partis-section {
+    padding: 30px calc(50vw - 50%);
+    margin: 13px 0;
+  }
+}
+
+/* ----- SECTION 4 ----- */
+/* Single screen display image with plan / elevation / section overlays */
+.plans-board > img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----- SECTION 5 ----- */
+/* Single screen display image with Image_1–11 overlays */
+.models-board {
+  margin-top: 50px;
+}
+
+.models-board > img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .models-board {
+    margin-top: 13px;
+  }
+}
+
+/* ----- SECTION 6 ----- */
+/* TIKA logo GIF: 18px above, matching Hive Park's gap after its last section */
+.tika-gif {
+  margin-top: 18px;
+}
 .map-wrapper {
   position: relative;
   width: 1000px;
@@ -221,21 +260,6 @@ h2 {
 /* =========================================
    NEW RESPONSIVE REFACTORED SECTIONS 
    ========================================= */
-
-/* Hero Image Updates */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
-.hero-image img {
-  width: 20%;
-  min-width: 250px;
-  height: auto;
-  object-fit: contain;
-}
 
 @media (max-width: 1024px) {
   .section-1 {
