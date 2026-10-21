@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     node.textContent = String(new Date().getFullYear());
   });
 
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  // Works with both /about.html and clean URLs like /about
+  const pageName = (path) =>
+    (path.split("/").pop() || "index").replace(/\.html$/, "");
+  const currentPath = pageName(window.location.pathname);
   const navLinks = document.querySelectorAll(".nav-links a");
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    const normalizedHref = href.split("/").pop();
+    const normalizedHref = pageName(href.split(/[?#]/)[0]);
     if (normalizedHref === currentPath) {
       link.classList.add("active");
     }

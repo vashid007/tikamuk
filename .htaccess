@@ -1,0 +1,24 @@
+# Clean URLs: /portfolio/shell_house instead of /portfolio/shell_house.html
+Options -MultiViews -Indexes
+
+# "portfolio" is both a page (portfolio.html) and a folder (portfolio/),
+# so don't let the server force a trailing slash before our rules run
+DirectorySlash Off
+
+RewriteEngine On
+
+# 1) /index.html -> folder URL (e.g. /dev1/index.html -> /dev1/)
+RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# 2) /page.html -> /page (only for requests typed/clicked by the browser)
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# 3) /page -> serve page.html behind the scenes
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# 4) Real folders still get their trailing slash (since DirectorySlash is off)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
