@@ -15,7 +15,9 @@ img {
 .section-1 {
   margin-top: 10px;
   display: flex;
-  height: 100vh;
+  /* Shorter than Hive Park's 100vh because the Shell House text is shorter:
+     keeps the gap from the text to Section 2 the same as on Hive Park */
+  height: calc(100vh - 100px);
   background-color: rgb(241, 238, 230);
   /* Full-width background while content stays inside .container,
      so the text lines up with the TIKA logo */
@@ -99,7 +101,7 @@ h2 {
 
 .meta-strong {
   font-family: "Kanit", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(50, 50, 50);
 }
 
@@ -123,7 +125,7 @@ h2 {
 /* ----- SECTION 2 ----- */
 /* Single screen display image with Note_1–3 overlays */
 .notes-board {
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .notes-board > img {
@@ -142,7 +144,8 @@ h2 {
 .partis-section {
   background-color: rgb(62, 61, 62);
   padding: 40px calc(50vw - 50%);
-  margin: 50px 0;
+  /* 40px above and below the band, matching Hive Park */
+  margin: 40px 0;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -170,9 +173,21 @@ h2 {
 }
 
 /* ----- SECTION 5 ----- */
+/* Full-width dark padding band (matches Hive Park section 3: 40px gap above, 40px padding) */
+.models-section {
+  background-color: rgb(62, 61, 62);
+  padding: 40px calc(50vw - 50%);
+  margin: 40px 0 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
 /* Single screen display image with Image_1–11 overlays */
 .models-board {
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .models-board > img {
@@ -181,8 +196,9 @@ h2 {
 }
 
 @media (max-width: 800px) {
-  .models-board {
-    margin-top: 13px;
+  .models-section {
+    padding: 30px calc(50vw - 50%);
+    margin: 13px 0 0;
   }
 }
 
