@@ -15,9 +15,8 @@ img {
 .section-1 {
   margin-top: 10px;
   display: flex;
-  /* Shorter than Hive Park's 100vh because the Shell House text is shorter:
-     keeps the gap from the text to Section 2 the same as on Hive Park */
-  height: calc(100vh - 100px);
+  /* Full screen height like Hive Park, so Section 2 only appears after scrolling */
+  height: 100vh;
   background-color: rgb(241, 238, 230);
   /* Full-width background while content stays inside .container,
      so the text lines up with the TIKA logo */
