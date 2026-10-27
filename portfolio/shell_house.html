@@ -52,7 +52,7 @@
     </script>
     <link rel="stylesheet" href="../assets/css/style.css?v=2.0" />
     <link rel="stylesheet" href="../assets/css/animations.css?v=2.0" />
-    <link rel="stylesheet" href="../assets/css/portfolio/shell-house.css?v=2.11" />
+    <link rel="stylesheet" href="../assets/css/portfolio/shell-house.css?v=2.15" />
   </head>
 
   <body>
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Section 2 -->
-      <div class="notes-board" style="position: relative;">
+      <div class="notes-board notes-desktop" style="position: relative;">
         <img
           src="../assets/images/portfolio/project7/pr7/2 (Screen Display Image).webp"
           class="no-zoom"
@@ -187,6 +187,45 @@
         </div>
       </div>
 
+      <!-- Section 2 (mobile only) -->
+      <div class="notes-mobile">
+        <div class="single-items">
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_1).webp" alt="Site Study" />
+          <div class="extra-gallery" style="display: none">
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_Zoom_1).webp" class="gallery-image" />
+          </div>
+        </div>
+        <div class="single-items">
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_2).webp" alt="Early Programmatic Exploration" />
+          <div class="extra-gallery" style="display: none">
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_Zoom_2).webp" class="gallery-image" />
+          </div>
+        </div>
+        <div class="notes-text">
+          <p class="notes-text-blue">
+            The site study and program sketches were developed during a visit
+            to Ward’s Island. The island’s unique characteristics and
+            architectural language served as the inspiration for my tiny home
+            design.
+          </p>
+          <p>
+            Locals often travel by bicycle on the island, as the roads are
+            inaccessible to vehicles.
+          </p>
+          <p>
+            Many residents live on their boats or have converted waterborne
+            vessels into homes and community restaurants, giving the Toronto
+            neighborhood its distinctive architectural character.
+          </p>
+        </div>
+        <div class="single-items">
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_3).webp" alt="Systems and Materials" />
+          <div class="extra-gallery" style="display: none">
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/2 (Note_Zoom_3).webp" class="gallery-image" />
+          </div>
+        </div>
+      </div>
+
       <!-- Section 3 -->
       <div class="partis-section">
         <div class="single-items">
@@ -204,7 +243,7 @@
       </div>
 
       <!-- Section 4 -->
-      <div class="plans-board" style="position: relative;">
+      <div class="plans-board plans-desktop" style="position: relative;">
         <img
           src="../assets/images/portfolio/project7/pr7/4 (Screen Display Image).webp"
           class="no-zoom"
@@ -379,6 +418,35 @@
           </div>
         </div>
       </div>
+      <!-- Section 4 (mobile only) -->
+      <div class="plans-mobile">
+        <!-- Plans: flashing images -->
+        <div class="plans-looper looper-container single-items">
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_1_GF Plan).png" alt="GF Plan" />
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_2_1F Plan).png" alt="1F Plan" />
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_3_Roof Plan).png" alt="Roof Plan" />
+          <div class="extra-gallery" style="display: none">
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_1_GF Plan).png" class="gallery-image" />
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_2_1F Plan).png" class="gallery-image" />
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_3_Roof Plan).png" class="gallery-image" />
+          </div>
+        </div>
+
+        <!-- Elevations + section: flashing images -->
+        <div class="elevations-looper looper-container single-items">
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_4_N Elevation).png" alt="N Elevation" />
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_5_E Elevation).png" alt="E Elevation" />
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_6_W Elevation).png" alt="W Elevation" />
+          <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_7_W Section).png" alt="W Section" />
+          <div class="extra-gallery" style="display: none">
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_4_N Elevation).png" class="gallery-image" />
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_5_E Elevation).png" class="gallery-image" />
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_6_W Elevation).png" class="gallery-image" />
+            <img src="../assets/images/portfolio/project7/pr7/Mobile/4 (P_Zoom_7_W Section).png" class="gallery-image" />
+          </div>
+        </div>
+      </div>
+
       <!-- Section 5 -->
       <div class="models-section">
       <div class="models-board" style="position: relative;">
@@ -678,10 +746,36 @@
 
     <div id="imageModal" class="image-modal">
       <span id="closeModal">&times;</span>
+      <span class="gallery-prev">&#10094;</span>
       <img id="modalImg" />
+      <span class="gallery-next">&#10095;</span>
     </div>
 
     <script src="../assets/js/main.js?v=2.1"></script>
     <script src="../assets/js/animations.js?v=2.0"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const looperContainers = document.querySelectorAll(".looper-container");
+
+        looperContainers.forEach((container, index) => {
+          // Only target the main images, not the ones in extra-gallery
+          const images = container.querySelectorAll(":scope > img");
+
+          if (images.length > 0) {
+            let currentIndex = 0;
+            images[0].classList.add("slideshow-active");
+
+            // Stagger the start of each looper to make it feel more organic
+            setTimeout(() => {
+              setInterval(() => {
+                images[currentIndex].classList.remove("slideshow-active");
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add("slideshow-active");
+              }, 300); // 0.3s loop
+            }, index * 100); // 100ms delay between each box start
+          }
+        });
+      });
+    </script>
   </body>
 </html>
