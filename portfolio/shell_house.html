@@ -52,7 +52,7 @@
     </script>
     <link rel="stylesheet" href="../assets/css/style.css?v=2.0" />
     <link rel="stylesheet" href="../assets/css/animations.css?v=2.0" />
-    <link rel="stylesheet" href="../assets/css/portfolio/shell-house.css?v=2.17" />
+    <link rel="stylesheet" href="../assets/css/portfolio/shell-house.css?v=2.22" />
   </head>
 
   <body>
@@ -99,10 +99,17 @@
           </div>
         </div>
         <div class="hero-image">
-          <img
-            src="../assets/images/portfolio/project7/pr7/1 (Cover image).webp"
-            alt="Hero Wall Installation"
-          />
+          <picture>
+            <!-- Tablet + mobile: portrait cover with the same proportions as Hive Park -->
+            <source
+              media="(max-width: 1024px)"
+              srcset="../assets/images/portfolio/project7/pr7/Mobile/1%20(Cover%20image).webp"
+            />
+            <img
+              src="../assets/images/portfolio/project7/pr7/1 (Cover image).webp"
+              alt="Hero Wall Installation"
+            />
+          </picture>
         </div>
       </div>
 
