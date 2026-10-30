@@ -41,17 +41,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-h2 {
-  color: #795137;
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  margin-bottom: 10px;
-}
-
 .meta p {
   color: rgb(239, 239, 239);
   font-family: "Kanit", sans-serif;
@@ -90,41 +79,12 @@ h2 {
 }
 
 /* ----- SECTION 2 ----- */
-.map-wrapper {
-  position: relative;
-  width: 1000px;
-  /* container size increase */
-  height: 700px;
-  margin: auto;
-}
-
-.map-wrapper img {
-  margin-top: 50px;
-  position: absolute;
-  max-width: 100%;
-  height: auto;
-}
 
 /* left image */
-.img1 {
-  left: 0;
-  top: 0;
-  width: 405px;
-}
 
 /* middle image */
-.img2 {
-  left: 212px;
-  top: 0;
-  width: 385px;
-}
 
 /* right image */
-.img3 {
-  left: 596px;
-  top: 0;
-  width: 348px;
-}
 
 footer.site-footer .container {
   color: #baadad;
@@ -283,19 +243,6 @@ footer.site-footer .container {
   height: auto;
 }
 
-.gallery-right-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.gallery-image-small {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .study {
   grid-column: 1 / -1;
   margin-top: 5px;
@@ -323,18 +270,8 @@ footer.site-footer .container {
 }
 
 /* 3 Column Layout */
-.three-col-layout {
-  display: grid;
-  grid-template-columns: 30fr 35fr 35fr;
-  gap: 20px;
-  width: 100%;
-  margin-bottom: 50px;
-}
 
 /* Technical Drawings Sections */
-/* .technical-drawing {
-    margin: 50px;
-} */
 
 .technical-drawing {
   position: relative;
@@ -404,8 +341,7 @@ footer.site-footer .container {
   }
 
   /* Stack gallery sections on tablet */
-  .split-gallery,
-  .three-col-layout {
+  .split-gallery {
     flex-direction: column;
     grid-template-columns: 1fr;
     gap: 13px;
@@ -418,13 +354,9 @@ footer.site-footer .container {
 
 @media (max-width: 800px) {
   /* Change grid to single column on mobile */
-  .gallery-right-grid {
-    grid-template-columns: 1fr;
-  }
 
   .gallery-left img,
-  .gallery-right img,
-  .gallery-image-small {
+.gallery-right img {
     height: auto;
   }
 

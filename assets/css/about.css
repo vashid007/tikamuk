@@ -9,8 +9,6 @@
     padding-top: 180px;
 }
 
-
-
 .personal-details {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
@@ -48,7 +46,6 @@
     padding: 120px 0px 0px 0px;
 }
 }
-
 
 /* styles for Professional Project */
 .about-allportfolio{
@@ -92,12 +89,7 @@
 .about-portfolio3 .about-portfolio-cards.reveal {
     transition-delay: 0.5s;
 }
-.portfolio-name{
-    text-decoration: underline;
-	align-self: flex-end;
-	margin: 0;
-    padding: 0.2rem 0;
-}
+
 .work-showcase-header {
     padding-bottom: 80px;
 }
@@ -113,35 +105,7 @@
     background-color: #F0EDE6;
 }
 
-
-
 /* text styles */
-.selected-works{
-    font-size: 20px;
-    color: #9C531D;
-    margin: 0;
-    padding-bottom: 5px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-}
-.portfolio-description{
-    font-size: 1rem;
-    font-weight: 300;
-    color: #3E3D3E;
-}
-.portfolio-type{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: #666666;
-    margin: 0;
-}
-.portfolio-name{
-    font-size: 1rem;
-    font-weight: 300;
-    color: #3E3D3E;
-}
-
 
 .personal-name{
     font-size: 1.5rem;
@@ -238,19 +202,13 @@
    .about-allportfolio{
         gap: 13px;
     }
-    .selected-works {
-        font-size: 1.8rem;
-    }
 
-    .portfolio-type,
     .personal-name {
         font-size: 20px;
     }
 
     .personal-contact,
-    .portfolio-description,
-    .portfolio-name,
-    .personal-bio-text-next {
+.personal-bio-text-next {
         font-size: 16px;
     }
 
@@ -263,12 +221,6 @@
     }
     .personal-bio-text, .personal-bio-text-next{
         font-size: 14px;
-    }
-
-    .portfolio-name {
-        order: 2;
-        align-self: flex-end;
-        flex: 0 0 70%;
     }
 
     .portfolio-item-flex a {

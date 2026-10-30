@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tikamuk.design/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/about</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/about</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/painting</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/painting</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/urbanizing_sand</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/urbanizing_sand</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/urbanizing_sand_textile_piece</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/urbanizing_sand_textile_piece</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/cut-connect-heal</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/cut-connect-heal</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/icon</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/icon</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/hive_park</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/hive_park</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/isolation</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/isolation</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tikamuk.design/portfolio/shell_house</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://tikamuk.design/dev1/portfolio/shell_house</loc>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

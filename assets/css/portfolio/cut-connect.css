@@ -80,11 +80,6 @@ h2 {
   color: #3e3d3e;
 }
 
-.meta-light {
-  font-weight: 300;
-  color: #3e3d3e;
-}
-
 .description {
   display: flex;
   flex-direction: column;
@@ -260,21 +255,6 @@ h2 {
   object-fit: contain;
 }
 
-/* .split-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.image-row {
-    display: flex;
-    gap: 10px;
-}
-
-.image-row img {
-    width: 50%;
-    object-fit: contain;
-} */
 .scan-image-box {
   width: 72%;
   height: 100%;
@@ -367,42 +347,6 @@ h2 {
   /* make it the positioning context */
 }
 
-.geomorph-map-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.geomorph-map-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: translateX(16%);
-}
-
-.left-content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 45%;
-  /* 40% of the parent width */
-  padding: 0;
-  /* remove the 10% 50% 0 0 padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.left-content * {
-  pointer-events: auto;
-}
-
 .right-content {
   position: absolute;
   top: 0;
@@ -446,14 +390,6 @@ h2 {
   font-weight: 400;
 }
 
-.left-content p {
-  color: #323232;
-  font-size: 7px;
-  margin-bottom: 5px;
-  font-family: ubuntu;
-  font-weight: 400;
-}
-
 .other-text {
   color: rgb(115, 20, 12);
   display: inline-block;
@@ -471,54 +407,11 @@ h2 {
   font-weight: 400;
 }
 
-.left-content h3 {
-  color: #232e78;
-  font-size: 7px;
-  font-family: ubuntu;
-  font-weight: 700;
-  padding-bottom: 8px;
-}
-
 .right-content h2 {
   color: rgb(50, 50, 50);
   font-size: 9px;
   font-family: Kanit, sans-serif;
   font-weight: 500;
-}
-
-.left-content h2 {
-  color: #323232;
-  font-size: 7px;
-  font-family: ubuntu;
-  font-weight: 400;
-}
-
-.left-content .geomorph-title {
-  font-family: Kanit, sans-serif;
-  font-weight: 500;
-  color: rgb(35, 46, 120);
-  font-size: 5px;
-}
-.green-text {
-  display: inline-block;
-  padding: 10px 0px;
-  color: #34552f;
-}
-
-.blue-text {
-  display: inline-block;
-  padding-top: 20px;
-  color: #232e78;
-  font-family: "Courier New";
-  font-size: 7px;
-  padding-bottom: 10px;
-}
-.black-text {
-  display: inline-block;
-  color: #000;
-  font-family: "Courier New";
-  font-size: 7px;
-  padding-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -528,25 +421,16 @@ h2 {
     /* auto height on mobile */
   }
 
-  .right-content p,
-  .left-content p {
+  .right-content p {
     font-size: 12px;
   }
 
-  .right-content .geomorph-title,
-  .left-content .geomorph-title {
-    font-size: 8px;
-  }
-
-  .right-content h2,
-  .left-content h2,
-  .left-content h3 {
+  .right-content h2 {
     font-size: 14px;
   }
 
-  .left-content,
   .right-content,
-  .right-after-content {
+.right-after-content {
     position: relative;
     width: 100%;
     top: auto;
@@ -558,32 +442,11 @@ h2 {
     pointer-events: auto;
   }
 
-  .left-content {
-    order: 2;
-    /* right content first, then left */
-  }
-
   .right-after-content {
     order: 3;
   }
 
   /* Geomorph map box: center section with 150px height gap */
-  .geomorph-map-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 150px;
-    z-index: 1;
-  }
-
-  .geomorph-map-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
 
   /* Push content above/below the image section */
   .right-content {
@@ -592,10 +455,6 @@ h2 {
     /* space for image */
   }
 
-  .left-content {
-    margin-top: 150px;
-    /* space for image */
-  }
 }
 
 /* 3. Layered Map Container */
@@ -621,12 +480,6 @@ h2 {
 .map-zoom-1,
 .map-zoom-2 {
   width: 100%;
-}
-
-.biota-list {
-  width: 19%;
-  right: 0;
-  z-index: 2;
 }
 
 .detail-banner {
@@ -677,7 +530,6 @@ h2 {
 
 .banner-left img,
 .banner-right img,
-.two-image img,
 .bridge-elev {
   display: block;
   width: 100%;
@@ -829,19 +681,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* .perspective-container {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #f0ede6;
-  padding: 0 4vw;
-  z-index: 1;
-  padding-top: 30px;
-} */
-
 .perspective-container {
   position: relative;
   width: 100%;
@@ -964,12 +803,6 @@ h2 {
   z-index: 99;
 }
 
-/* .flux-left {
-  flex: 0 0 calc(13% - 7.5px);
-  text-align: end;
-  display: flex;
-  flex-direction: column;
-} */
 .flux-left {
   flex: 0 0 calc(13% - 7.5px);
   text-align: end;
@@ -1194,11 +1027,6 @@ h2 {
   font-family: "Courier New", Courier, monospace;
 }
 
-.model-large {
-  height: 220px;
-  width: auto;
-  object-fit: contain;
-}
 .margin-img {
   margin-top: 14px;
 }
@@ -1356,10 +1184,6 @@ h2 {
     flex-direction: column;
   }
 
-  .model-large {
-    height: auto;
-    width: 100%;
-  }
 }
 
 @media (max-width: 800px) and (min-width: 769px) {
@@ -1570,23 +1394,6 @@ h2 {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
-  .info-middle-mobile h6 {
-    color: #3e3d3e;
-    font-size: 7px;
-    margin-bottom: 5px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 700;
-    margin-top: -1px;
-  }
-
-  .info-middle-mobile p {
-    margin-left: 12px;
-    line-height: 1.1;
-    color: #000000;
-    font-size: 7px;
-    font-family: "Courier New", Courier, monospace;
-    margin-bottom: 20px;
-  }
 
   .perspective-box {
     margin-top: -18px;
@@ -1638,17 +1445,6 @@ h2 {
     width: auto !important;
   }
 
-  .mobile-onlysection-six .icon-row .icon-column p {
-    font-size: 7px;
-    margin-bottom: 8px;
-    color: #73140c;
-    font-family: "Courier New", Courier, monospace;
-    line-height: 1.2;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: left;
-  }
-
   .mobile-onlysection-six .icon-row .icon-column img {
     width: 100% !important;
     height: auto !important;
@@ -1657,26 +1453,7 @@ h2 {
   .sixth-2 {
     padding: 13px 0 0px 0px;
   }
-  .sixth-content {
-    padding: 10px 0px 13px 0px;
-  }
-  .sixth-content h6 {
-    color: #323232;
-    font-size: 7px;
-    margin-bottom: 5px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 600;
-    line-height: 0.5rem;
-    margin-top: -1.5px;
-  }
-  .sixth-content p {
-    line-height: 105%;
-    color: #000000;
-    font-size: 7px;
-    margin-bottom: 5px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 400;
-  }
+
   .sixth-2,
   .sixth-3,
   .sixth-4,

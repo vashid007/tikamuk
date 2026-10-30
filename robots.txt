@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tikamuk.design/sitemap.xml
+Sitemap: https://tikamuk.design/dev1/sitemap.xml

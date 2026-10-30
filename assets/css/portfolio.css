@@ -55,7 +55,6 @@
   }
 }
 
-
 .main-wrap h1 {
   font-size: 16px;
   color: #8b8b89;
@@ -93,10 +92,7 @@
 .category-wrap h1{
   font-weight: 500;
   font-size: 16px;
-  
 }
-
-
 
 /*Mobile responsive*/
 @media (max-width: 768px) {
@@ -134,7 +130,6 @@
     border-left: 0px dashed #959490;
     border-right: 0px dashed #959490;
     padding: 0px;
-    
     /* ADD: Remove pseudo-element borders */
     &::before,
     &::after {
@@ -145,7 +140,6 @@
     border-left: 0px dashed #959490;
     border-right: 0px dashed #959490;
     padding: 0px;
-    
     /* ADD: Remove pseudo-element borders */
     &::before,
     &::after {
@@ -203,184 +197,8 @@
   }
 }
 
-
-
-
-
 /*2nd section */
 /* 3 Column Layout */
-.three-col-layout {
-    display: grid;
-    grid-template-columns: 44fr 28fr 28fr; /* Automatically scales exactly inside the container */
-    gap: 10px;
-    width: 100%;
-    padding: 120px 0px 180px 0px;
-}
-
-
-.bio-container {
-  display: grid;
-  grid-template-columns: auto 1fr; /* First column fits content, second fills remainder */
-  gap: 15px; /* 15px gap between the columns */
-  width: 100%;
-  align-items: center;
-}
-.bio_image h1{
-font-family: "Kanit";
-text-align: center;
-padding-bottom: 15px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #9C531D;
-}
-.bio_image img{
-  padding: 20px;
-  align-items: center;
-}
-
-.bio_content h1{
-  font-size: 9px;
-color: #8c8c8c;
-font-weight: 300;
-font-family: "Kanit";
-padding-bottom: 35px;
-}
-.bio_content p{
-  font-size: 10px;
-color: #666666;
-font-weight: 500;
-font-family: "Ubuntu";
-line-height: 0.8rem;
-}
-
-.bio_content span{
-  display: inline-block;
-  font-size: 10px;
-  color: #975321;
-  font-weight: 500;
-  font-family: "Ubuntu";
-  line-height: 0.8rem;
-  padding-top: 8px;
-}
 
 /* Timeline Layout */
-.timeline-col {
-  display: flex;
-  flex-direction: column;
-}
 
-.timeline-section {
-  display: flex;
-}
-
-.timeline-left {
-  width: 25%;
-  flex-shrink: 0;
-  text-align: right;
-  padding-right: 15px;
-  padding-top: 2px;
-}
-
-.timeline-left h2 {
-  font-size: 10px;
-  color: #8c8c8c;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-family: "Ubuntu", sans-serif;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.timeline-right {
-  flex-grow: 1;
-  border-left: 2px solid #9C531D;
-  padding-left: 15px;
-  padding-bottom: 30px;
-}
-
-.timeline-section.last-section .timeline-right {
-  padding-bottom: 0;
-}
-
-.timeline-right p {
-  font-size: 10px;
-  color: #666666;
-  font-weight: 400;
-  font-family: "Ubuntu", sans-serif;
-  line-height: 1.5;
-  margin-bottom: 4px;
-}
-
-.timeline-right p.mb-5 {
-  margin-bottom: 5px;
-}
-
-/* .timeline-indent {
-  padding-left: 15px;
-} */
-
-.timeline-right strong {
-  font-weight: 600;
-  color: #555;
-}
-
-.activity-row {
-  display: flex;
-  margin-bottom: 8px;
-}
-
-.activity-date {
-  width: 75px;
-  flex-shrink: 0;
-  font-size: 10px;
-  color: #666666;
-  font-family: "Ubuntu", sans-serif;
-}
-
-.activity-desc {
-  flex-grow: 1;
-  font-size: 10px;
-  color: #666666;
-  font-family: "Ubuntu", sans-serif;
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .three-col-layout {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 40px;
-    padding: 60px 0px;
-  }
-
-  .bio-container {
-    grid-template-columns: 1fr; /* Stack into 1 column on smaller (mobile) screens */
-  }
-
-  .bio_image h1 {
-    text-align: left;
-    font-size: 18px;
-  }
-
-  .bio_image img {
-    padding: 0;
-  }
-  .bio_content h1{
-    font-size: 14px;
-    padding-bottom: 10px;
-  }
-  .bio_content p, .bio_content span{
-    font-size: 14px;
-    line-height: 1.2em;
-  }
-
-  .timeline-section h2,
-  .timeline-section p,
-  .timeline-section span,
-  .timeline-section strong {
-    font-size: 13px !important;
-  }
-  .timeline-section{
-    padding-bottom: 80px;
-  }
-}

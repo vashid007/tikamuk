@@ -374,34 +374,7 @@ h2 {
     height: auto;
   }
 
-  .parent-1 {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-  }
-
-  .parent-2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 13px;
-    margin-top: 13px;
-  }
-
-  .parent-2 .div1,
-  .parent-2 .div2,
-  .parent-2 .div3,
-  .parent-2 .div4,
-  .parent-2 .div5 {
-    grid-area: auto;
-  }
-
   /* Removed misplaced h6 style */
-
-  .div3-2 p {
-    width: 100%;
-  }
 
   .bottom-image {
     padding: 13px 0;
@@ -478,12 +451,6 @@ h2 {
     text-transform: uppercase;
   }
 
-  .parent-1 .div3 {
-    gap: 13px;
-  }
-  .parent-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .bottom-image {
     padding: 13px 0;
   }
@@ -491,10 +458,6 @@ h2 {
 
 @media (max-width: 520px) {
   .s2-right {
-    grid-template-columns: 1fr;
-  }
-
-  .parent-2 {
     grid-template-columns: 1fr;
   }
 

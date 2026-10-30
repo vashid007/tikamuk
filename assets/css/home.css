@@ -22,13 +22,6 @@
   transform-origin: center center;
 }
 
-.homegallery .img-wrapper.zoom-active {
-  animation: zoomEffect 5s cubic-bezier(0.4, 0, 0.1, 1) forwards;
-  z-index: 10;
-  width:300px ;
-  height: 300px;
-}
-
 @keyframes zoomEffect {
   0% {
     transform: scale(1);
@@ -46,7 +39,6 @@
     transform: scale(1.2);
   }
 }
-
 
 .img1 {
   top: 10rem;
@@ -102,7 +94,6 @@
   bottom: 3rem;
   left: 8.25rem;
 }
-
 
 @media (max-width: 768px) {
 
@@ -176,9 +167,6 @@
   }
 }
 
-
-
-
 @media screen and (min-width: 769px) and (max-width:1200px) {
     .homegallery {
     padding-top: 20%;
@@ -195,11 +183,6 @@
 .img10 { bottom: 35%; left: 20%; }
 .img11 { top: 75%; right: 40%; }
 }
-
-
-
-
-
 
 /* Animation css  */
 
@@ -265,4 +248,22 @@
     display: block;
     line-height: 1;
     cursor: pointer;
+}
+/* Desktop: the home page (header included) fits the screen, no scrolling.
+   Zoomed images near the bottom are lifted by home.js (--lift-*) so they stay inside the screen. */
+@media (min-width: 769px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .homegallery .img-wrapper.auto-active {
+    transform: translate(var(--shift-x, 0px), var(--lift-zoom, 0px)) scale(2.5);
+  }
+
+  .homegallery .img-wrapper.active,
+  .homegallery .img-wrapper:hover {
+    transform: translate(var(--shift-x, 0px), var(--lift-details, 0px)) scale(2.5);
+  }
 }

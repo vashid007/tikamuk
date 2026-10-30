@@ -9,10 +9,6 @@
   transform: translateY(0);
 }
 
-.float-in {
-  animation: floatIn 0.8s ease both;
-}
-
 @keyframes floatIn {
   from {
     opacity: 0;

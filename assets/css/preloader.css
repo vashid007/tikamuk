@@ -42,14 +42,6 @@ body.loading-active main {
 }
 
 /* Zoom out effect */
-#loader-logo.zoom-out {
-    transform: scale(0.6);
-    opacity: 0.8;
-}
-#second-gif {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
 
 #second-gif.show {
   opacity: 1;
@@ -60,12 +52,6 @@ body.loading-active main {
 }
 #loader-logo.shrink {
   width: 120px;
-}
-
-#loader-logo.move-top-left {
-  position: fixed;
-  top: 20px;
-  left: 20px;
 }
 
 .site-header {
