@@ -156,11 +156,22 @@
     color: #666666;
     margin: 1rem 0;
 }
+.personal-email{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: rgb(140, 140, 140);
+}
+/* Bio: first paragraph Ubuntu Bold, second Ubuntu Medium, rgb(102, 102, 102) */
 .personal-bio-text{
+    font-family: 'Ubuntu', sans-serif;
     font-size: 0.8rem;
-    font-weight: 500;
-    color: #666666;
+    font-weight: 700;
+    color: rgb(102, 102, 102);
     margin: 0.5rem 0;
+}
+.personal-bio-text-medium{
+    font-weight: 500;
+    margin-top: 1rem;
 }
 .personal-bio-text-next{
     font-size: 0.8rem;
