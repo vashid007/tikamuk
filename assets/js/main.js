@@ -221,3 +221,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// About + Portfolio: project images sharpen from a soft blur as they scroll into view
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".about-allportfolio .portfolio-image, .main-wrap .single-items img");
+  if (!images.length) return;
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  images.forEach((img) => img.classList.add("blur-reveal"));
+
+  // Small pause before each reveal so it is noticed; longer for images visible when the page opens
+  const FIRST_DELAY = 700;
+  const DELAY = 300;
+  const STEP = 150;
+  let firstBatch = true;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const base = firstBatch ? FIRST_DELAY : DELAY;
+      firstBatch = false;
+      // Images appearing together reveal one after another, top to bottom, left to right
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left)
+        .forEach((entry, i) => {
+          const img = entry.target;
+          observer.unobserve(img);
+          img.style.setProperty("--reveal-delay", base + i * STEP + "ms");
+          // Start only once the image has loaded and its blurred state has been drawn,
+          // otherwise it can pop in already sharp on a first visit
+          const start = () => {
+            void getComputedStyle(img).filter; // make sure the blurred state is applied first
+            img.classList.add("is-revealed");
+          };
+          if (img.complete && img.naturalWidth) start();
+          else {
+            img.addEventListener("load", start, { once: true });
+            img.addEventListener("error", start, { once: true });
+          }
+        });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+  );
+  images.forEach((img) => observer.observe(img));
+});
