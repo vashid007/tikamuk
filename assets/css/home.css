@@ -100,7 +100,8 @@
   .homegallery {
     position: relative;
     width: 100%;
-    min-height: 120vh; /* Ensure it takes at least the full viewport */
+    /* At least tall enough for the lowest image (img11: 940px + 80px) on short phones */
+    min-height: max(120vh, 1060px);
     padding-top: 100px;
     padding-bottom: 100px; /* Extra space for items placed near the bottom */
     overflow-x: hidden; /* Prevent horizontal scroll while allowing vertical scroll */
@@ -129,7 +130,6 @@
   .homegallery .img-wrapper.active,
   .homegallery .img-wrapper.auto-active,
   .homegallery .img-wrapper:hover {
-    transform: scale(1.8); /* Reduced for a subtler look on mobile */
     z-index: 100 !important;
   }
 
@@ -249,21 +249,22 @@
     line-height: 1;
     cursor: pointer;
 }
-/* Desktop: the home page (header included) fits the screen, no scrolling.
-   Zoomed images near the bottom are lifted by home.js (--lift-*) so they stay inside the screen. */
+/* Desktop: the home page (header included) fits the screen, no scrolling. */
 @media (min-width: 769px) {
   html,
   body {
     height: 100%;
     overflow: hidden;
   }
+}
 
-  .homegallery .img-wrapper.auto-active {
-    transform: translate(var(--shift-x, 0px), var(--lift-zoom, 0px)) scale(2.5);
-  }
+/* All screens: zoomed images are moved by home.js (--shift-x / --lift-*) so the image,
+   and its text on hover / tap, stay inside the visible screen */
+.homegallery .img-wrapper.auto-active {
+  transform: translate(var(--shift-x, 0px), var(--lift-zoom, 0px)) scale(2.5);
+}
 
-  .homegallery .img-wrapper.active,
-  .homegallery .img-wrapper:hover {
-    transform: translate(var(--shift-x, 0px), var(--lift-details, 0px)) scale(2.5);
-  }
+.homegallery .img-wrapper.active,
+.homegallery .img-wrapper:hover {
+  transform: translate(var(--shift-x, 0px), var(--lift-details, 0px)) scale(2.5);
 }

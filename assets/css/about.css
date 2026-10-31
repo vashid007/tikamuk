@@ -120,16 +120,28 @@
     color: #666666;
     margin: 1rem 0;
 }
+/* Degree line next to the name: same colour as the email */
+.personal-info .personal-contact{
+    color: rgb(140, 140, 140);
+}
+.personal-separator{
+    color: rgb(167, 131, 94);
+}
 .personal-email{
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
     color: rgb(140, 140, 140);
 }
 /* Bio: first paragraph Ubuntu Bold, second Ubuntu Medium, rgb(102, 102, 102) */
+/* Gap from the degree line to the bio matches the photo-to-name gap (24px) */
+.personal-bio{
+    padding-top: 16px;
+}
 .personal-bio-text{
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
+    line-height: 1.15;
     color: rgb(102, 102, 102);
     margin: 0.5rem 0;
 }
@@ -137,11 +149,13 @@
     font-weight: 500;
     margin-top: 1rem;
 }
+/* Same line spacing as the bio above and the same 1rem gap as between the two bio paragraphs */
 .personal-bio-text-next{
     font-size: 0.8rem;
     font-weight: 400;
-    color: #A74E00;
-    margin: 0.5rem 0;
+    line-height: 1.15;
+    color: rgb(167, 131, 94);
+    margin: 1.2rem 0 calc(0.5rem + 1px); /* Kanit sits lower in its line than Ubuntu; this evens out the visible gap */
 }
 
 @media (max-width: 1200px) {
@@ -244,5 +258,27 @@
         width: 100px !important; 
         height: 100px !important;
         flex-shrink: 0 !important;
+    }
+}
+/* Selected Works (tablet + mobile): the gap above "Academic Projects" and "Selected Paintings"
+   matches the gap between the tagline and "Professional Projects" (13px already comes from the cards) */
+@media (max-width: 768px) {
+    .about-portfolio2,
+    .about-portfolio3 {
+        margin-top: 19px; /* 13 + 19 = 32px */
+    }
+}
+@media (max-width: 600px) {
+    .about-portfolio2,
+    .about-portfolio3 {
+        margin-top: 35px; /* 13 + 35 = 48px */
+    }
+}
+
+/* Tablet + mobile: profile photo's right edge lines up with the right edge of the brown
+   TIKA logo in the header (the brown ends at 93.24% of the 170px-wide logo) */
+@media (max-width: 768px) {
+    .personal-details img {
+        width: calc(170px * 0.9324);
     }
 }

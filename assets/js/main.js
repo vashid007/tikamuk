@@ -24,9 +24,22 @@ const hamburger = document.getElementById("hamburger");
 const navMenu = document.querySelector(".nav-links");
 
 if (hamburger && navMenu) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  hamburger.setAttribute("role", "button");
+  hamburger.setAttribute("aria-label", "Menu");
+  hamburger.setAttribute("aria-expanded", "false");
+
+  const setMenu = (open) => {
+    hamburger.classList.toggle("active", open);
+    navMenu.classList.toggle("active", open);
+    document.body.classList.toggle("menu-open", open);
+    hamburger.setAttribute("aria-expanded", String(open));
+  };
+
+  hamburger.addEventListener("click", () => setMenu(!navMenu.classList.contains("active")));
+  // Close when a menu link is tapped, or with the Escape key
+  navMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenu(false);
   });
 }
 
@@ -176,4 +189,35 @@ if (modalVideo) {
 }
 };
 
+});
+// Portfolio tab: the whole project area (title, thumbnail and the space between them)
+// opens the project, not just the title. The row's padding above/below stays inactive.
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".main-wrap .single-items").forEach((item) => {
+    const link = item.querySelector("a[href]");
+    const thumb = item.querySelector(".img-wrapper");
+    if (!link || !thumb) return;
+
+    // Inside the band from the top to the bottom of the title/thumbnail
+    const inBand = (e) => {
+      const a = link.getBoundingClientRect();
+      const t = thumb.getBoundingClientRect();
+      return e.clientY >= Math.min(a.top, t.top) && e.clientY <= Math.max(a.bottom, t.bottom);
+    };
+
+    item.addEventListener("mousemove", (e) => {
+      item.style.cursor = inBand(e) ? "pointer" : "";
+    });
+    item.addEventListener("mouseleave", () => {
+      item.style.cursor = "";
+    });
+    item.addEventListener("click", (e) => {
+      if (e.target.closest("a") || !inBand(e)) return; // the title link already works on its own
+      if (e.ctrlKey || e.metaKey || e.shiftKey) {
+        window.open(link.href, "_blank");
+      } else {
+        window.location.href = link.href;
+      }
+    });
+  });
 });

@@ -152,14 +152,6 @@ footer.site-footer .container {
   object-fit: contain;
 }
 
-/* TIKA logo GIF: keep it off the GPU layer (style.css forces one on all images),
-   which makes this large animated GIF flicker on iOS */
-.tika-gif img {
-  will-change: auto;
-  transform: none;
-  backface-visibility: visible;
-}
-
 /* Split Gallery (Concept Sketches) */
 .split-gallery {
   display: flex;

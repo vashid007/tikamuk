@@ -1,3 +1,8 @@
+/* The page is dark (set on <body> in icon.html); match it behind the page so no light strip shows at the bottom */
+html {
+  background-color: #3e3d3e;
+}
+
 body {
   background: #f0ede6;
   color: #ffffff;
@@ -119,6 +124,16 @@ footer.site-footer .container {
   max-height: 90vh;
   object-fit: contain;
   margin-right: 20%;
+}
+
+/* Desktop: put the cover's centre on the same vertical line as Hive Park's cover.
+   Hive Park's cover is (12% + half its width) from the right, its width being
+   min(25%, 18.57vh). Translating by 50% of this image's own width centres it on that line. */
+@media (min-width: 1025px) {
+  .hero-image img {
+    margin-right: calc(12% + min(25%, 18.57vh) / 2);
+    transform: translateX(50%);
+  }
 }
 
 /* Icon Gallery Grid */

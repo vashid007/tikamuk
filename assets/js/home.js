@@ -71,14 +71,11 @@ function load_animation(){
 
 
 
-// Desktop: work out how far each image must move when zoomed (scale 2.5) so that
-// the image (auto zoom) or image + details (hover / click) stays inside the screen,
+// Work out how far each image must move when zoomed (scale 2.5) so that
+// the image (auto zoom) or image + details (hover / tap) stays inside the visible screen,
 // with a small margin on every side and below the header.
 (function () {
-  const SCALE = 2.5;
-  const MARGIN = 16;
   const desktop = window.matchMedia("(min-width: 769px)");
-  const PROPS = ["--shift-x", "--lift-zoom", "--lift-details"];
 
   // Move needed to fit [start, end] inside [min, max]; keeps the start edge visible if it can't fit
   function fit(start, end, min, max) {
@@ -87,20 +84,24 @@ function load_animation(){
     return 0;
   }
 
+  // Position on screen without any transform (offset* values ignore transforms,
+  // so this works even while an image is zoomed); the mobile page scrolls, so subtract the scroll
+  function layoutPosition(el) {
+    let x = 0, y = 0;
+    for (let e = el; e; e = e.offsetParent) { x += e.offsetLeft; y += e.offsetTop; }
+    return { left: x - window.scrollX, top: y - window.scrollY };
+  }
+
   function updateLifts() {
+    const SCALE = 2.5; // same zoom on every screen size (see home.css)
+    const MARGIN = desktop.matches ? 16 : 10;
     const header = document.querySelector(".site-header");
     const minTop = (header ? header.getBoundingClientRect().bottom : 0) + MARGIN;
     const maxBottom = window.innerHeight - MARGIN;
     const maxRight = document.documentElement.clientWidth - MARGIN;
 
     document.querySelectorAll(".homegallery .img-wrapper").forEach((wrapper) => {
-      if (!desktop.matches) {
-        PROPS.forEach((p) => wrapper.style.removeProperty(p));
-        return;
-      }
-      // offset* values ignore transforms, so this works even while an image is zoomed
-      const top = wrapper.offsetTop;
-      const left = wrapper.offsetLeft;
+      const { top, left } = layoutPosition(wrapper);
       const width = wrapper.offsetWidth;
       const height = wrapper.offsetHeight;
       const centerX = left + width / 2;
@@ -113,8 +114,10 @@ function load_animation(){
       const zoomTop = scaled(top, centerY);
 
       const shiftX = fit(scaled(left, centerX), scaled(left + width, centerX), MARGIN, maxRight);
-      const liftZoom = fit(zoomTop, scaled(imageBottom, centerY), minTop, maxBottom);
-      const liftDetails = fit(zoomTop, scaled(detailsBottom, centerY), minTop, maxBottom);
+      // Only move up/down images that are on screen (on mobile the auto zoom can pick off-screen images)
+      const onScreen = imageBottom > 0 && top < window.innerHeight;
+      const liftZoom = onScreen ? fit(zoomTop, scaled(imageBottom, centerY), minTop, maxBottom) : 0;
+      const liftDetails = onScreen ? fit(zoomTop, scaled(detailsBottom, centerY), minTop, maxBottom) : 0;
 
       wrapper.style.setProperty("--shift-x", shiftX + "px");
       wrapper.style.setProperty("--lift-zoom", liftZoom + "px");

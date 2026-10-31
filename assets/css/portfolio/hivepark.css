@@ -1,3 +1,5 @@
+/* html too: stops the site's default page colour showing as a strip at the bottom (overscroll / browser bars) */
+html,
 body {
   background: #f0ede6;
   color: #ffffff;

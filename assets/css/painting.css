@@ -3,6 +3,17 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+/* Desktop: the cover fills at least the whole first screen (GIF centred),
+   so the first painting only appears after scrolling, on any screen shape */
+@media (min-width: 769px) {
+  .painting-banner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .paintmain-wrap{
 display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -32,7 +43,8 @@ display: grid;
 .single-items h1{
   font-size: 18px;
   color: #975321;
-  font-weight: 600;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400; /* Kanit Regular */
 }
 .single-items p{
   color: #323232;
@@ -75,18 +87,33 @@ display: grid;
   .single-items h1{
   font-size: 22px;
   color: #975321;
-  font-weight: 600;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400; /* Kanit Regular */
   }
+  /* Text under each painting: sizes and gaps match the Cut-Connect-Heal cover on mobile */
   .single-items p{
   color: #323232;
   margin: 0;
-  font-size: 18px;
+  font-size: 12px;
+  line-height: 1.4;
   }
-  .additional-description{
+  .single-items h1{
+  margin-bottom: 0;
+  }
+  .painting-meta:first-of-type{
+  margin-top: 11px; /* title -> MEDIUM (10px visible gap) */
+  }
+  .painting-meta + .painting-meta{
+  margin-top: 10px; /* MEDIUM -> YEAR (9px visible gap) */
+  }
+  .single-items .additional-description{
   color: #323232;
   margin: 0;
-  padding-top: 9px;
+  padding-top: 19px; /* YEAR -> description */
   padding-right: 0%;
-  font-weight: 100;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  font-weight: 400 !important; /* Regular, like Cut-Connect-Heal (desktop rule above uses 500 !important) */
+  line-height: normal;
 }
 }    

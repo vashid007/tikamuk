@@ -4,6 +4,8 @@
   padding: 0;
 }
 
+/* html too: stops the site's default page colour showing as a strip at the bottom (overscroll / browser bars) */
+html,
 body {
   background-color: #3c3c3c;
   color: #ffffff;
