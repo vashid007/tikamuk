@@ -222,24 +222,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// About + Portfolio: project images sharpen from a soft blur as they scroll into view
-document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".about-allportfolio .portfolio-image, .main-wrap .single-items img");
+// Blur reveal: images sharpen from a soft blur as they come into view.
+// About (project images + profile photo), Portfolio (thumbnails), Paintings (every painting).
+// Runs straight away (this script is at the end of the page) so images never flash in sharp first.
+(function () {
+  const images = document.querySelectorAll(
+    ".about-allportfolio .portfolio-image, .personal-details img, .main-wrap .single-items img, .paintmain-wrap .img-wrapper > img"
+  );
   if (!images.length) return;
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.remove("js-reveal"); // show images normally
+    return;
+  }
 
   images.forEach((img) => img.classList.add("blur-reveal"));
 
-  // Small pause before each reveal so it is noticed; longer for images visible when the page opens
-  const FIRST_DELAY = 700;
-  const DELAY = 300;
+  // Images on screen when the page opens wait for the page to finish loading, then a short pause,
+  // so the effect is clearly seen. Images reached by scrolling start after a shorter pause.
+  const FIRST_DELAY = 400;
+  const DELAY = 250;
   const STEP = 150;
   let firstBatch = true;
+  const pageLoaded = new Promise((resolve) => {
+    if (document.readyState === "complete") resolve();
+    else window.addEventListener("load", resolve, { once: true });
+  });
+  const imageLoaded = (img) =>
+    new Promise((resolve) => {
+      if (img.complete && img.naturalWidth) resolve();
+      else {
+        img.addEventListener("load", resolve, { once: true });
+        img.addEventListener("error", resolve, { once: true });
+      }
+    });
 
   const observer = new IntersectionObserver(
     (entries) => {
-      const base = firstBatch ? FIRST_DELAY : DELAY;
+      const isFirst = firstBatch;
       firstBatch = false;
+      const base = isFirst ? FIRST_DELAY : DELAY;
       // Images appearing together reveal one after another, top to bottom, left to right
       entries
         .filter((entry) => entry.isIntersecting)
@@ -248,20 +269,13 @@ document.addEventListener("DOMContentLoaded", function () {
           const img = entry.target;
           observer.unobserve(img);
           img.style.setProperty("--reveal-delay", base + i * STEP + "ms");
-          // Start only once the image has loaded and its blurred state has been drawn,
-          // otherwise it can pop in already sharp on a first visit
-          const start = () => {
-            void getComputedStyle(img).filter; // make sure the blurred state is applied first
+          Promise.all([imageLoaded(img), isFirst ? pageLoaded : null]).then(() => {
+            void getComputedStyle(img).filter; // make sure the blurred state is drawn first
             img.classList.add("is-revealed");
-          };
-          if (img.complete && img.naturalWidth) start();
-          else {
-            img.addEventListener("load", start, { once: true });
-            img.addEventListener("error", start, { once: true });
-          }
+          });
         });
     },
-    { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+    { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
   );
   images.forEach((img) => observer.observe(img));
-});
+})();

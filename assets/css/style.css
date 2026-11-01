@@ -400,8 +400,11 @@ body.modal-open {
 }
 
 
-/* ===== BLUR REVEAL (About + Portfolio project images) =====
-   Images start soft, faded and slightly small, then sharpen into place as they scroll into view */
+/* ===== BLUR REVEAL (About, Portfolio and Paintings images) =====
+   The blurred starting state is applied by CSS from the very first paint (html.js-reveal is set by a
+   one-line script in the <head>), so images never flash in sharp, even when they come from the cache.
+   main.js then adds .is-revealed to each image as it comes into view. */
+html.js-reveal :is(.about-allportfolio .portfolio-image, .personal-details img, .main-wrap .single-items img, .paintmain-wrap .img-wrapper > img),
 .blur-reveal {
   opacity: 0;
   filter: blur(14px);
@@ -413,6 +416,7 @@ body.modal-open {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
+html.js-reveal :is(.about-allportfolio .portfolio-image, .personal-details img, .main-wrap .single-items img, .paintmain-wrap .img-wrapper > img).is-revealed,
 .blur-reveal.is-revealed {
   opacity: 1;
   filter: blur(0);
@@ -420,6 +424,7 @@ body.modal-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.js-reveal :is(.about-allportfolio .portfolio-image, .personal-details img, .main-wrap .single-items img, .paintmain-wrap .img-wrapper > img),
   .blur-reveal {
     opacity: 1;
     filter: none;
