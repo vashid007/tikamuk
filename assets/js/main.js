@@ -279,3 +279,44 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   images.forEach((img) => observer.observe(img));
 })();
+
+// Paintings page opened from a link to one painting (painting.html#hearts etc.):
+// desktop centres the painting in the space below the header; mobile shows the painting
+// with its title, MEDIUM and YEAR at the bottom of the screen. A very tall painting may be cut off.
+(function () {
+  const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!target || !target.classList.contains("paintmain-wrap")) return;
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  const header = document.querySelector(".site-header");
+  const image = target.querySelector(".img-wrapper");
+  const metas = target.querySelectorAll(".painting-meta");
+  const GAP = 20;
+  let userScrolled = false;
+  ["wheel", "touchstart", "keydown"].forEach((type) =>
+    window.addEventListener(type, () => (userScrolled = true), { once: true, passive: true })
+  );
+
+  const position = () => {
+    if (userScrolled) return; // don't pull the page back once the visitor starts scrolling
+    const headerH = header ? header.offsetHeight : 0;
+    const img = image.getBoundingClientRect();
+    let y;
+    if (window.innerWidth <= 768) {
+      const year = metas[metas.length - 1].getBoundingClientRect();
+      // Painting just below the header; if that pushes YEAR off screen, scroll on until YEAR sits at the bottom
+      y = Math.max(scrollY + year.bottom + GAP - innerHeight, scrollY + img.top - headerH - GAP);
+    } else {
+      y = scrollY + img.top - headerH - (innerHeight - headerH - img.height) / 2;
+    }
+    window.scrollTo(0, Math.max(0, y));
+  };
+
+  // Paintings above this one change height as they load, so place it again once everything has loaded
+  position();
+  if (document.readyState === "complete") return;
+  document.querySelectorAll("main img").forEach((img) => {
+    if (!img.complete) img.addEventListener("load", position, { once: true });
+  });
+  window.addEventListener("load", position, { once: true });
+})();
