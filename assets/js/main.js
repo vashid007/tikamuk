@@ -292,6 +292,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const image = target.querySelector(".img-wrapper");
   const metas = target.querySelectorAll(".painting-meta");
   const GAP = 20;
+  // iPhone Safari's address bar floats over the bottom of the page (Chrome's doesn't), so keep YEAR above it
+  const ua = navigator.userAgent;
+  const iosSafari = /iPhone|iPod/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+  const BOTTOM = iosSafari ? 90 : GAP;
   let userScrolled = false;
   ["wheel", "touchstart", "keydown"].forEach((type) =>
     window.addEventListener(type, () => (userScrolled = true), { once: true, passive: true })
@@ -305,18 +309,25 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 768) {
       const year = metas[metas.length - 1].getBoundingClientRect();
       // Painting just below the header; if that pushes YEAR off screen, scroll on until YEAR sits at the bottom
-      y = Math.max(scrollY + year.bottom + GAP - innerHeight, scrollY + img.top - headerH - GAP);
+      y = Math.max(scrollY + year.bottom + BOTTOM - innerHeight, scrollY + img.top - headerH - GAP);
     } else {
       y = scrollY + img.top - headerH - (innerHeight - headerH - img.height) / 2;
     }
     window.scrollTo(0, Math.max(0, y));
   };
 
-  // Paintings above this one change height as they load, so place it again once everything has loaded
+  // Paintings above this one change height as they load, so place it again once everything has loaded.
+  // Safari jumps to the #link target itself after loading, so place it once more just after that.
+  const settle = () => {
+    position();
+    requestAnimationFrame(position);
+    setTimeout(position, 150);
+    setTimeout(position, 500);
+  };
   position();
-  if (document.readyState === "complete") return;
   document.querySelectorAll("main img").forEach((img) => {
     if (!img.complete) img.addEventListener("load", position, { once: true });
   });
-  window.addEventListener("load", position, { once: true });
+  if (document.readyState === "complete") settle();
+  else window.addEventListener("load", settle, { once: true });
 })();
