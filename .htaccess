@@ -1,3 +1,12 @@
+# Pages: browsers must check for a newer copy every visit (Safari otherwise keeps
+# old pages for days, which also keeps the old ?v= CSS/JS links). Unchanged pages
+# still load from the browser's copy after a quick "not modified" reply.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 # Clean URLs: /portfolio/shell_house instead of /portfolio/shell_house.html
 Options -MultiViews -Indexes
 
