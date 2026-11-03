@@ -292,10 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const image = target.querySelector(".img-wrapper");
   const metas = target.querySelectorAll(".painting-meta");
   const GAP = 20;
-  // iPhone Safari's address bar floats over the bottom of the page (Chrome's doesn't), so keep YEAR above it
-  const ua = navigator.userAgent;
-  const iosSafari = /iPhone|iPod/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
-  const BOTTOM = iosSafari ? 90 : GAP;
   let userScrolled = false;
   ["wheel", "touchstart", "keydown"].forEach((type) =>
     window.addEventListener(type, () => (userScrolled = true), { once: true, passive: true })
@@ -308,8 +304,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let y;
     if (window.innerWidth <= 768) {
       const year = metas[metas.length - 1].getBoundingClientRect();
-      // Painting just below the header; if that pushes YEAR off screen, scroll on until YEAR sits at the bottom
-      y = Math.max(scrollY + year.bottom + BOTTOM - innerHeight, scrollY + img.top - headerH - GAP);
+      const visibleH = Math.min(innerHeight, window.visualViewport ? visualViewport.height : innerHeight);
+      // Painting 30px below the header; if that pushes YEAR off screen, scroll on until YEAR sits at the bottom
+      y = Math.max(scrollY + year.bottom + GAP - visibleH, scrollY + img.top - headerH - 30);
     } else {
       y = scrollY + img.top - headerH - (innerHeight - headerH - img.height) / 2;
     }
