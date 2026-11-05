@@ -1,9 +1,31 @@
-# Pages: browsers must check for a newer copy every visit (Safari otherwise keeps
-# old pages for days, which also keeps the old ?v= CSS/JS links). Unchanged pages
-# still load from the browser's copy after a quick "not modified" reply.
+# Site: https://tikamuk.design/ (Apache on GoDaddy cPanel; also works on LiteSpeed)
+
+# File types older servers may not know
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType video/mp4 .mp4
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# Compress text files on the way out (images, fonts and videos are already compressed)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
 <IfModule mod_headers.c>
+  # Pages: browsers must check for a newer copy every visit (Safari otherwise keeps
+  # old pages for days, which also keeps the old ?v= CSS/JS links). Unchanged pages
+  # still load from the browser's copy after a quick "not modified" reply.
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Images, fonts, videos, CSS and JS: keep for 7 days (CSS/JS links carry ?v= so changes still show)
+  <FilesMatch "\.(css|js|png|jpe?g|gif|webp|avif|svg|ico|woff2|mp4)$">
+    Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 
   # Security: HTTPS only for a year, no content-type guessing, no framing by other sites,
@@ -27,14 +49,20 @@ DirectorySlash Off
 
 RewriteEngine On
 
-# 0a) www.tikamuk.design -> tikamuk.design (one address for Google, not two copies)
+# 0a) www.tikamuk.design -> https://tikamuk.design (one address for Google, not two copies)
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
 
-# 0b) Hidden files (.gitignore, .git, .htaccess) are never served; .well-known stays open for SSL checks
+# 0b) http -> https (the second line avoids a loop when a proxy in front already handled HTTPS)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+# 0c) Hidden files (.gitignore, .htaccess, the deploy's sync file) are never served;
+#     .well-known stays open for SSL certificate checks
 RewriteRule (^|/)\.(?!well-known/) - [F]
 
-# 1) /index.html -> folder URL (e.g. /dev1/index.html -> /dev1/)
+# 1) /index.html -> folder URL (e.g. /index.html -> /)
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L,NE]
 

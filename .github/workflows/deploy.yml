@@ -1,0 +1,36 @@
+# Uploads the site to GoDaddy (cPanel) whenever main is pushed, or on demand from the Actions tab.
+# Only changed files are sent: the action keeps a small sync file (.ftp-deploy-sync-state.json)
+# on the server to know what is already there. Login details live in the repo's Actions secrets.
+name: Deploy to GoDaddy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-godaddy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Get the site files
+        uses: actions/checkout@v4
+
+      - name: Upload changed files over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          # The FTP account opens in the site's own folder, so upload to its top level
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            **/node_modules/**
