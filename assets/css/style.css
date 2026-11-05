@@ -1,73 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+/* Fonts are hosted with the site (Kanit and Ubuntu, woff2). font-display: swap shows text
+   straight away in a fallback font while these load. */
+@font-face { font-family: "Kanit"; src: url("../fonts/kanit/Kanit-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Kanit"; src: url("../fonts/kanit/Kanit-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Kanit"; src: url("../fonts/kanit/Kanit-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Kanit"; src: url("../fonts/kanit/Kanit-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
-@font-face {
-  font-family: "Kanit";
-  src: url("../fonts/Kanit/Kanit/Kanit-Light.ttf") format("truetype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Kanit";
-  src: url("../fonts/Kanit/Kanit/Kanit-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Kanit";
-  src: url("../fonts/Kanit/Kanit/Kanit-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Kanit";
-  src: url("../fonts/Kanit/Kanit/Kanit-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src:
-    local("Ubuntu Light"),
-    local("Ubuntu-Light"),
-    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjCjBsGyN.woff2")
-      format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src:
-    local("Ubuntu Regular"),
-    local("Ubuntu"),
-    local("Ubuntu-Regular"),
-    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgo6eC5nkSGH.woff2")
-      format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src:
-    local("Ubuntu Medium"),
-    local("Ubuntu-Medium"),
-    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jsGyN.woff2")
-      format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src:
-    local("Ubuntu Bold"),
-    local("Ubuntu-Bold"),
-    url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxC7jsGyN.woff2")
-      format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
+@font-face { font-family: "Ubuntu"; src: url("../fonts/ubuntu/Ubuntu-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("../fonts/ubuntu/Ubuntu-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("../fonts/ubuntu/Ubuntu-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("../fonts/ubuntu/Ubuntu-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
 html,
 body {
@@ -267,10 +208,6 @@ body {
   }
 }
 
-.portfolio-modal.active {
-  display: flex;
-}
-
 .site-footer {
   padding-top: 80px;
   color: #3e3d3e;
@@ -289,8 +226,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-/* IMAGE ZOOM MODAL */
 
 /* IMAGE ZOOM MODAL */
 
@@ -329,9 +264,6 @@ a {
 /* zoom cursor only */
 .page-intro img:not(.no-zoom) {
   cursor: zoom-in;
-}
-body.modal-open {
-  overflow: hidden;
 }
 .detail-actions a {
   border: 1px solid #000;
@@ -431,4 +363,17 @@ html.js-reveal :is(.about-allportfolio .portfolio-image, .personal-details img, 
     transform: none;
     transition: none;
   }
+}
+
+/* Read by search engines and screen readers, not shown on screen */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

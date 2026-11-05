@@ -40,7 +40,7 @@ display: grid;
   height: 100%;
   object-fit: cover;
 }
-.single-items h1{
+.single-items h2{
   font-size: 18px;
   color: #975321;
   font-family: "Kanit", sans-serif;
@@ -105,7 +105,7 @@ display: grid;
     padding-top: 80px;
     padding-bottom: 40px;
   }
-  .single-items h1{
+  .single-items h2{
   font-size: 22px;
   color: #975321;
   font-family: "Kanit", sans-serif;
@@ -118,7 +118,7 @@ display: grid;
   font-size: 12px;
   line-height: 1.4;
   }
-  .single-items h1{
+  .single-items h2{
   margin-bottom: 14px; /* same as Hive Park on mobile */
   }
   .single-items .additional-description{

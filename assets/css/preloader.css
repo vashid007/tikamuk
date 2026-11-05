@@ -41,12 +41,6 @@ body.loading-active main {
   transform: scale(1);
 }
 
-/* Zoom out effect */
-
-#second-gif.show {
-  opacity: 1;
-}
-
 #preloader.fade-out {
   opacity: 0;
 }

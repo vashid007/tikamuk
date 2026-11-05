@@ -76,6 +76,7 @@ function showImage(index){
     }
     modalImg.style.display = "block";
     modalImg.src = src;
+    modalImg.alt = img.alt;
   }
 }
 

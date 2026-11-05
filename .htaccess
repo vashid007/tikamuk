@@ -5,6 +5,17 @@
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+
+  # Security: HTTPS only for a year, no content-type guessing, no framing by other sites,
+  # minimal referrer, no camera/mic/location, and only this site's own files may load.
+  # (Inline scripts/styles are allowed because the pages use them.)
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header always unset X-Powered-By
 </IfModule>
 
 # Clean URLs: /portfolio/shell_house instead of /portfolio/shell_house.html
@@ -15,6 +26,13 @@ Options -MultiViews -Indexes
 DirectorySlash Off
 
 RewriteEngine On
+
+# 0a) www.tikamuk.design -> tikamuk.design (one address for Google, not two copies)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+# 0b) Hidden files (.gitignore, .git, .htaccess) are never served; .well-known stays open for SSL checks
+RewriteRule (^|/)\.(?!well-known/) - [F]
 
 # 1) /index.html -> folder URL (e.g. /dev1/index.html -> /dev1/)
 RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?] [NC]
