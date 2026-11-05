@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Get the site files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Upload changed files over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
